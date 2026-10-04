@@ -139,8 +139,8 @@ export const Footer: React.FC = () => {
                 className="object-contain bg-[#061019]"
               />
             </div>
-            <p className="text-xs text-brand-gray-muted leading-relaxed font-sans font-light">
-              Dual-jurisdictional strategic advisory and merchant banking operating at the intersection of technology, industry, and sovereign capital across the US and GCC corridor.
+            <p className="text-xs sm:text-[12.5px] font-medium tracking-[0.16em] uppercase text-brand-gold/90 leading-relaxed pt-1">
+              CONNECTING CAPITAL. ACCELERATING TRANSITION. BUILDING LEGACIES.
             </p>
             <div className="text-[11px] text-brand-gray-muted/70 font-mono space-y-0.5 pt-2">
               <p>ADGM Reg: #MN-ADV-8942-GCC</p>
