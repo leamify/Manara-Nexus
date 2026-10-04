@@ -64,7 +64,7 @@ export const StrategicAdvantage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
-                className="bg-white p-8 md:p-10 rounded-xl border border-neutral-200/80 shadow-md shadow-neutral-200/40 hover:shadow-xl hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white p-8 md:p-10 rounded-none border border-neutral-200/80 shadow-md shadow-neutral-200/40 hover:shadow-xl hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-8">
