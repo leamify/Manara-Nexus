@@ -170,18 +170,23 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-white mb-5">
               Contact Us
             </h4>
-            <div className="space-y-2.5 text-xs text-brand-gray-muted font-light">
-              <div className="flex items-start gap-2">
+            <div className="space-y-3.5 text-xs text-brand-gray-muted font-light">
+              <div className="flex items-start gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-brand-gold shrink-0 mt-0.5" />
-                <span>Abu Dhabi &middot; Dubai &middot; Riyadh &middot; New York</span>
+                <div className="flex flex-col space-y-1">
+                  <span>Abu Dhabi</span>
+                  <span>Dubai</span>
+                  <span>Riyadh</span>
+                  <span>New York</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 pt-0.5">
                 <Mail className="w-3.5 h-3.5 text-brand-gold shrink-0" />
                 <a href="mailto:advisory@manaranexus.com" className="hover:text-brand-gold transition-colors">
                   advisory@manaranexus.com
                 </a>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <Globe className="w-3.5 h-3.5 text-brand-gold shrink-0" />
                 <span>www.manaranexus.com</span>
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Compass, TrendingUp, Landmark, Briefcase, ArrowRight } from "lucide-react";
 
@@ -9,6 +10,7 @@ interface ServiceItem {
   title: string;
   description: string;
   icon: React.ElementType;
+  image: string;
 }
 
 const services: ServiceItem[] = [
@@ -18,6 +20,7 @@ const services: ServiceItem[] = [
     description:
       "Techno-commercial strategy, market assessment, competitive intelligence, and regulatory positioning for emerging breakthroughs across key transcontinental jurisdictions.",
     icon: Compass,
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "02",
@@ -25,6 +28,7 @@ const services: ServiceItem[] = [
     description:
       "Market access, customer engagement, pilot design, early customer acquisition, and institutional validation across primary markets and tier-one corporate conglomerates.",
     icon: TrendingUp,
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "03",
@@ -32,6 +36,7 @@ const services: ServiceItem[] = [
     description:
       "Investment readiness, capital strategy, institutional syndicate structuring, and sovereign wealth/private equity alignment to fund critical capital-intensive scaling.",
     icon: Landmark,
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "04",
@@ -39,6 +44,7 @@ const services: ServiceItem[] = [
     description:
       "Mega-project partnerships, EPC structuring, industrial localization, and cross-border government/stakeholder management anchoring operations inside major economic zones.",
     icon: Briefcase,
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
@@ -92,12 +98,23 @@ export const WhatWeDo: React.FC = () => {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-8 md:p-10 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#06181B]/40 flex flex-col justify-between"
+                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-8 md:p-10 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#06181B]/50 flex flex-col justify-between overflow-hidden"
               >
-                {/* Subtle top indicator bar */}
-                <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold rounded-none transition-all duration-500 ease-out group-hover:w-full" />
+                {/* Background image that is revealed slightly on hover */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover object-center opacity-0 group-hover:opacity-20 scale-100 group-hover:scale-105 transition-all duration-700 ease-out filter grayscale brightness-110 contrast-125 mix-blend-luminosity"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07171A] via-[#091F22]/75 to-[#0C272B]/60 transition-opacity duration-500" />
+                </div>
 
-                <div>
+                {/* Subtle top indicator bar */}
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold rounded-none transition-all duration-500 ease-out group-hover:w-full z-20" />
+
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-7">
                     <span className="font-serif text-3xl font-normal text-brand-gold/90 tracking-wider">
                       {service.id}
@@ -118,7 +135,7 @@ export const WhatWeDo: React.FC = () => {
                 </div>
 
                 {/* Card Footer: Arrow only, bottom texts completely removed */}
-                <div className="mt-8 pt-5 border-t border-[#173D42] flex items-center justify-end">
+                <div className="mt-8 pt-5 border-t border-[#173D42] flex items-center justify-end relative z-10">
                   <ArrowRight className="w-4 h-4 text-[#7D9A9C] group-hover:text-brand-gold group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </motion.div>
