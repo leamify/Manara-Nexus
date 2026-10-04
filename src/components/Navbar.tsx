@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-black border-b border-[#1E483C] ${
-        isScrolled ? "py-2.5 shadow-2xl shadow-black" : "py-3 shadow-lg shadow-black/80"
+        isScrolled ? "py-1.5 md:py-2 shadow-2xl shadow-black" : "py-2 md:py-2.5 shadow-lg shadow-black/80"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative z-10">
@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
           className="flex items-center group focus:outline-none"
           aria-label="Manara Nexus Home"
         >
-          <div className="relative h-14 sm:h-16 md:h-20 lg:h-[84px] w-52 sm:w-64 md:w-80 lg:w-96 transition-transform duration-300 group-hover:scale-[1.02]">
+          <div className="relative h-10 sm:h-11 md:h-12 w-44 sm:w-52 md:w-60 transition-transform duration-300 group-hover:scale-[1.02]">
             <Image
               src="/images/manara-logo.jpg"
               alt="Manara Nexus Logo"
