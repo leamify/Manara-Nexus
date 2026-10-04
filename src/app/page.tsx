@@ -24,11 +24,11 @@ export default function Home() {
       {/* 3. Capabilities: From opportunity to deployment (2x2 Dark Cards) */}
       <WhatWeDo />
 
-      {/* 4. Architected for Cross-Border Precision & Sovereign Scale (3 White Cards) */}
-      <StrategicAdvantage />
-
-      {/* 5. Target Domains: Sectors (6 Dark Domain Cards & US <> GCC Corridor) */}
+      {/* 4. Sector and Ecosystem: Sectors (6 Dark Green Domain Cards & US <> GCC Corridor) */}
       <Sectors />
+
+      {/* 5. Architected for Cross-Border Precision & Sovereign Scale (3 White Cards) */}
+      <StrategicAdvantage />
 
       {/* 6. Sovereign & Industrial Mandate Matrix (Tabbed 3-Track Grid) */}
       <Mandates />

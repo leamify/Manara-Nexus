@@ -2,49 +2,53 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe2, ShieldCheck, Scale, ArrowUpRight } from "lucide-react";
+import { Compass, Gem, BadgeCheck } from "lucide-react";
 
 interface AdvantageCard {
+  principle: string;
   title: string;
   description: string;
   icon: React.ElementType;
-  tag: string;
 }
 
 const advantageCards: AdvantageCard[] = [
   {
-    tag: "01 / ARCHITECTURE",
-    title: "Dual-Valued Corridor Framework",
+    principle: "PRINCIPLE 01",
+    title: "Our Value Creation Framework",
     description:
-      "Institutional alignment bridging United States breakthrough technologies with GCC sovereign deployment capacity, patient capital, and anchor industrialization mandates.",
-    icon: Globe2,
+      "Proprietary techno-commercial architecture bridging advanced innovation and sovereign capital deployment with measurable milestone engineering.",
+    icon: Compass,
   },
   {
-    tag: "02 / RIGOR",
-    title: "Techno-Commercial De-risking",
+    principle: "PRINCIPLE 02",
+    title: "Long-Term Relationship & Deep Involvement",
     description:
-      "Rigorous evaluation harmonizing Technical Readiness Levels (TRL) with commercial adoption pathways, bankability benchmarks, and binding offtake agreements.",
-    icon: ShieldCheck,
+      "Beyond isolated assignments, broker introductions, and episodic transactions—we serve as enduring co-architects invested in multi-year ecosystem success.",
+    icon: Gem,
   },
   {
-    tag: "03 / EXECUTION",
-    title: "Institutional Execution Excellence",
+    principle: "PRINCIPLE 03",
+    title: "Successfully Executed Deals Across Ecosystems",
     description:
-      "Direct senior partner immersion navigating regulatory clearances, sovereign co-investment syndicates, and complex cross-border joint venture transactions.",
-    icon: Scale,
+      "A proven track record of closed bilateral cross-border mandates and high-stakes deployments steered directly by Joel Coville & Madhurima Roy across US and GCC ecosystems.",
+    icon: BadgeCheck,
   },
 ];
 
 export const StrategicAdvantage: React.FC = () => {
   return (
-    <section className="bg-white py-24 md:py-32 px-6 md:px-12 relative border-t border-neutral-200/70">
+    <section
+      id="strategic-advantage"
+      className="bg-[#F7F9F8] py-24 md:py-32 px-6 md:px-12 relative border-t border-neutral-200/70"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 md:mb-20">
-          <div className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3">
-            STRATEGIC ADVANTAGE
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] font-semibold text-[#9E7B38] mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#9E7B38]" />
+            <span>WHY MANARA</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight font-normal leading-[1.2]">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#0A1612] tracking-tight font-normal leading-[1.2]">
             Architected for Cross-Border Precision &amp; Sovereign Scale.
           </h2>
         </div>
@@ -55,35 +59,30 @@ export const StrategicAdvantage: React.FC = () => {
             const Icon = card.icon;
             return (
               <motion.div
-                key={card.title}
+                key={card.principle}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
-                className="bg-[#FAFAFB] p-8 md:p-10 rounded-sm border border-neutral-200/90 hover:border-brand-gold/60 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-200/60 flex flex-col justify-between group"
+                className="bg-white p-8 md:p-10 rounded-xl border border-neutral-200/80 shadow-md shadow-neutral-200/40 hover:shadow-xl hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-8">
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400 group-hover:text-brand-gold transition-colors">
-                      {card.tag}
+                    <span className="text-[11px] font-sans font-medium uppercase tracking-[0.25em] text-neutral-400 group-hover:text-brand-gold transition-colors">
+                      {card.principle}
                     </span>
-                    <div className="w-10 h-10 rounded-sm bg-white border border-neutral-200 flex items-center justify-center text-brand-navy group-hover:border-brand-gold group-hover:text-brand-gold transition-all duration-300 shadow-sm">
+                    <div className="w-9 h-9 rounded-full bg-[#F7F9F8] border border-neutral-200/80 flex items-center justify-center text-[#9E7B38] group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-all duration-300">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-2xl text-brand-navy font-normal mb-4 tracking-tight group-hover:text-brand-gold transition-colors duration-200 leading-snug">
+                  <h3 className="font-serif text-2xl md:text-[25px] text-[#0A1612] font-normal mb-4 tracking-tight leading-[1.3] group-hover:text-[#9E7B38] transition-colors duration-200">
                     {card.title}
                   </h3>
 
-                  <p className="text-neutral-600 text-sm md:text-base leading-relaxed font-sans font-light">
+                  <p className="text-neutral-500 text-xs sm:text-[13.5px] leading-relaxed font-sans font-light">
                     {card.description}
                   </p>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-neutral-200/60 flex items-center justify-between text-xs tracking-wider uppercase font-semibold text-neutral-400 group-hover:text-brand-gold transition-colors">
-                  <span>Corridor Standard</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </motion.div>
             );

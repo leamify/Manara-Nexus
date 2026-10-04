@@ -116,6 +116,15 @@ export const HeroSection: React.FC = () => {
           }}
         />
 
+        {/* Subtle Atmospheric Top Green Glow - Only Visible on Hero Section */}
+        <div
+          className="absolute top-0 left-0 right-0 h-36 sm:h-44 pointer-events-none z-[2]"
+          style={{
+            background:
+              "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(24, 120, 92, 0.15) 0%, rgba(15, 75, 58, 0.05) 50%, transparent 80%)",
+          }}
+        />
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#18755A]/12 via-[#0F4E3C]/03 to-transparent pointer-events-none z-[2]" />
       </div>
 
       {/* 2. Main Hero Content with Generous Editorial Spacing */}

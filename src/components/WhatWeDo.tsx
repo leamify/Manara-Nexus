@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, TrendingUp, Landmark, Layers, ArrowUpRight } from "lucide-react";
+import { Compass, TrendingUp, Landmark, Briefcase, ArrowRight } from "lucide-react";
 
 interface ServiceItem {
   id: string;
@@ -16,29 +16,29 @@ const services: ServiceItem[] = [
     id: "01",
     title: "Strategic Advisory",
     description:
-      "Techno-commercial strategy, market assessment, opportunity development and strategic decision support.",
-    icon: Briefcase,
+      "Techno-commercial strategy, market assessment, competitive intelligence, and regulatory positioning for emerging breakthroughs across key transcontinental jurisdictions.",
+    icon: Compass,
   },
   {
     id: "02",
     title: "Commercialisation",
     description:
-      "Market access, customer engagement, strategic partnerships and pathways to commercial adoption.",
+      "Market access, customer engagement, pilot design, early customer acquisition, and institutional validation across primary markets and tier-one corporate conglomerates.",
     icon: TrendingUp,
   },
   {
     id: "03",
     title: "Strategic Capital",
     description:
-      "Investment readiness, capital strategy, investor engagement, transactions and M&A strategy.",
+      "Investment readiness, capital strategy, institutional syndicate structuring, and sovereign wealth/private equity alignment to fund critical capital-intensive scaling.",
     icon: Landmark,
   },
   {
     id: "04",
     title: "Project Deployment",
     description:
-      "Mega-project partnerships, stakeholder management and support in moving opportunities towards execution.",
-    icon: Layers,
+      "Mega-project partnerships, EPC structuring, industrial localization, and cross-border government/stakeholder management anchoring operations inside major economic zones.",
+    icon: Briefcase,
   },
 ];
 
@@ -71,14 +71,14 @@ export const WhatWeDo: React.FC = () => {
         {/* Section Header */}
         <div className="mb-14 md:mb-16">
           <div className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3">
-            CAPABILITIES & DEPLOYMENT
+            WHAT WE DO
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight font-normal">
             From opportunity to deployment.
           </h2>
         </div>
 
-        {/* 2x2 Grid Layout with Dark Luxury Cards */}
+        {/* 2x2 Grid Layout with Dark Green-Blue Luxury Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -92,33 +92,34 @@ export const WhatWeDo: React.FC = () => {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                className="group relative bg-[#070F1E] p-8 md:p-11 rounded-sm border border-white/10 hover:border-brand-gold/70 transition-all duration-300 hover:shadow-2xl hover:shadow-black/30 flex flex-col justify-between"
+                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-8 md:p-10 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#06181B]/40 flex flex-col justify-between"
               >
                 {/* Subtle top indicator bar */}
-                <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold transition-all duration-500 ease-out group-hover:w-full" />
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold rounded-none transition-all duration-500 ease-out group-hover:w-full" />
 
                 <div>
-                  <div className="flex items-center justify-between mb-8">
-                    <span className="font-serif text-3xl font-normal text-brand-gold tracking-wider">
+                  <div className="flex items-center justify-between mb-7">
+                    <span className="font-serif text-3xl font-normal text-brand-gold/90 tracking-wider">
                       {service.id}
                     </span>
-                    <div className="w-10 h-10 rounded-sm border border-brand-gold/30 bg-[#0E1B31] flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                    <div className="w-9 h-9 rounded-full border border-brand-gold/30 bg-[#0F3136] flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-2xl md:text-3xl text-white font-normal mb-4 tracking-tight group-hover:text-brand-gold transition-colors duration-200">
+                  {/* Golden Colored Title */}
+                  <h3 className="font-serif text-2xl md:text-3xl text-brand-gold font-normal mb-4 tracking-tight">
                     {service.title}
                   </h3>
 
-                  <p className="text-brand-gray-muted text-sm sm:text-base leading-relaxed font-sans font-light">
+                  <p className="text-[#9DB3B5] text-sm sm:text-[14.5px] leading-relaxed font-sans font-light">
                     {service.description}
                   </p>
                 </div>
 
-                <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between text-xs tracking-widest uppercase font-semibold text-brand-gray-muted/80 group-hover:text-brand-gold transition-colors">
-                  <span>Advisory Pillar {service.id}</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                {/* Card Footer: Arrow only, bottom texts completely removed */}
+                <div className="mt-8 pt-5 border-t border-[#173D42] flex items-center justify-end">
+                  <ArrowRight className="w-4 h-4 text-[#7D9A9C] group-hover:text-brand-gold group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </motion.div>
             );

@@ -55,16 +55,6 @@ export const Navbar: React.FC = () => {
         isScrolled ? "py-2.5 shadow-2xl shadow-black" : "py-3 shadow-lg shadow-black/80"
       }`}
     >
-      {/* 3D Atmospheric Green Glow Emanating Directly from Navbar Bottom Edge (Subtle & Transparent) */}
-      <div
-        className="absolute top-full left-0 right-0 h-32 sm:h-40 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(24, 120, 92, 0.28) 0%, rgba(15, 75, 58, 0.12) 50%, transparent 85%)",
-        }}
-      />
-      <div className="absolute top-full left-0 right-0 h-14 bg-gradient-to-b from-[#18755A]/25 via-[#0F4E3C]/08 to-transparent pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative z-10">
         {/* Exact Logo from Image 1 */}
         <Link
