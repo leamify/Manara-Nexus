@@ -131,17 +131,14 @@ export const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Column 1: Official Logo & Entity */}
           <div className="space-y-4">
-            <div className="relative h-24 sm:h-28 md:h-32 w-32 sm:w-36 md:w-40 overflow-hidden rounded-none border border-brand-gold/30 shadow-2xl">
+            <div className="relative h-24 sm:h-28 md:h-32 w-32 sm:w-36 md:w-40 overflow-hidden rounded-none">
               <Image
                 src="https://res.cloudinary.com/g9q4th37/image/upload/v1791141388/Manara_Nexus_logo_draft.jpg"
                 alt="Manara Nexus Logo"
                 fill
-                className="object-contain bg-[#061019]"
+                className="object-contain object-left"
               />
             </div>
-            <p className="text-xs sm:text-[12.5px] font-medium tracking-[0.16em] uppercase text-brand-gold/90 leading-relaxed pt-1">
-              CONNECTING CAPITAL. ACCELERATING TRANSITION. BUILDING LEGACIES.
-            </p>
             <div className="text-[11px] text-brand-gray-muted/70 font-mono space-y-0.5 pt-2">
               <p>ADGM Reg: #MN-ADV-8942-GCC</p>
               <p>Delaware Entity: 7824190-DE</p>
