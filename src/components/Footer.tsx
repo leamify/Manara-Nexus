@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
           {/* Column 2: Navigation Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-white mb-5">
-              Capabilities
+              Quick Links
             </h4>
             <ul className="space-y-2 text-xs">
               {quickLinks.map((link) => (
@@ -168,10 +168,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Corridor Hubs & Contact */}
+          {/* Column 3: Contact */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-white mb-5">
-              Corridor Hubs
+              Contact Us
             </h4>
             <div className="space-y-2.5 text-xs text-brand-gray-muted font-light">
               <div className="flex items-start gap-2">
