@@ -16,13 +16,13 @@ const partners: Partner[] = [
   {
     name: "Joel Coville",
     role: "MANAGING PARTNER",
-    image: "/images/joel-coville.jpg",
+    image: "https://res.cloudinary.com/g9q4th37/image/upload/v1791140718/6b9d20eb-a0d1-41b0-af40-b36ae79402a5.png",
     bio: "Three decades across investment banking, asset management and private capital markets, with experience in transactions advisory, M&A and capital strategy for large-scale projects. Deep Middle East expertise and networks across UAE and KSA, supporting Economic Vision-led mandates and strategic capital deployment.",
   },
   {
     name: "Madhurima Roy",
     role: "MANAGING PARTNER",
-    image: "/images/madhurima-roy.jpg",
+    image: "https://res.cloudinary.com/g9q4th37/image/upload/v1791140717/1b89ef48-a45c-406b-8476-879f1c6f3247.png",
     bio: "Techno-commercial strategy experience across deep tech, climate tech, advanced manufacturing, sustainable built environment, next-generation fuels and energy. GCC experience across venture building, commercial de-risking, investor readiness and sustainable finance pathways, including commercial and capital partnerships for large-scale projects.",
   },
 ];
