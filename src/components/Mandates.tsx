@@ -4,75 +4,103 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
-interface MandateCase {
+interface MandateTab {
   id: string;
-  category: "commercialisation" | "market-access" | "strategic-capital";
+  label: string;
   vectorId: string;
-  status: "EXECUTED" | "IN DEPLOYMENT";
-  subCategory: string;
+  badge: string;
   title: string;
   description: string;
+  bullets: string[];
   capitalScale: string;
   corridor: string;
   advisoryRole: string;
 }
 
-const mandateTabs = [
-  { id: "all", label: "ALL MANDATES (03)" },
-  { id: "commercialisation", label: "COMMERCIALISATION" },
-  { id: "market-access", label: "MARKET ACCESS & OFF-TAKE" },
-  { id: "strategic-capital", label: "STRATEGIC CAPITAL" },
-];
-
-const mandatesList: MandateCase[] = [
+const mandateTabs: MandateTab[] = [
   {
-    id: "01",
-    category: "commercialisation",
-    vectorId: "VECTOR #C-019",
-    status: "EXECUTED",
-    subCategory: "TECHNO-COMMERCIAL ROLLOUT",
-    title: "US Climate-Tech Scale-Up Commercial Rollout to GCC Sovereign Developers",
+    id: "commercialisation-strategy",
+    label: "Commercialisation Strategy",
+    vectorId: "MANDATE #C-01",
+    badge: "MARKET ROLLOUT",
+    title: "Commercialisation Strategy",
     description:
-      "Structured multi-tier validation for an MIT-spinoff clean chemistry enterprise. Delivered full regional market architecture, competitive displacement model, and positioned proprietary catalysts into mega-scale infrastructure projects.",
-    capitalScale: "$150M – $300M",
-    corridor: "Boston <> Abu Dhabi",
+      "Structured techno-commercial architecture and validation models to transition high-growth technologies into sovereign and corporate deployment pipelines.",
+    bullets: [
+      "Market opportunity assessment",
+      "Commercial positioning",
+      "Market-entry strategy",
+      "Customer / offtaker engagement",
+      "Go-to-market pathways",
+    ],
+    capitalScale: "$50M — $300M+",
+    corridor: "US <> GCC Sovereign Corridor",
     advisoryRole: "Lead Strategic Advisor & Commercial Architect",
   },
   {
-    id: "02",
-    category: "market-access",
-    vectorId: "VECTOR #M-084",
-    status: "IN DEPLOYMENT",
-    subCategory: "CROSS-BORDER INDUSTRIAL JV",
-    title: "Advanced Composite Aerostructures Localization & Off-Take Joint Venture",
+    id: "market-access-partnerships",
+    label: "Market Access & Partnerships",
+    vectorId: "MANDATE #M-02",
+    badge: "CROSS-BORDER JV",
+    title: "Market Access & Partnerships",
     description:
-      "Facilitated bilateral joint venture between a leading US composite manufacturer and Saudi Arabia's industrial development syndicate. Orchestrated stakeholder engagement with ministries, industrial city authorities, and construction consortiums.",
-    capitalScale: "$85M JV Capital",
-    corridor: "NYC <> Riyadh KAFD",
+      "Bilateral joint ventures, industrial localization frameworks, and high-level stakeholder orchestration across sovereign and corporate conglomerates.",
+    bullets: [
+      "GCC ecosystem development",
+      "Strategic partner identification",
+      "Customer and stakeholder engagement",
+      "JV / partnership development",
+      "Technology deployment opportunities",
+    ],
+    capitalScale: "$75M — $500M+",
+    corridor: "US <> Saudi Arabia & UAE",
     advisoryRole: "JV Architect & Sovereign Alignment Partner",
   },
   {
-    id: "03",
-    category: "strategic-capital",
-    vectorId: "VECTOR #S-112",
-    status: "EXECUTED",
-    subCategory: "SYNDICATE STRUCTURING",
-    title: "Next-Gen Long-Duration Energy Storage Cross-Border Utility Mandate",
+    id: "investment-readiness-strategic-capital",
+    label: "Investment Readiness & Strategic Capital",
+    vectorId: "MANDATE #S-03",
+    badge: "SYNDICATE STRUCTURING",
+    title: "Investment Readiness & Strategic Capital",
     description:
-      "Advised global energy storage pioneer through institutional syndicate formation. Synthesized financial models to satisfy dual sovereign wealth fund investment committees, aligning private growth capital with Gulf-based strategic LP anchors.",
-    capitalScale: "$200M+ Project Scale",
-    corridor: "California <> Dubai",
+      "Institutional syndicate formation, bankability analysis, and dual sovereign wealth fund alignment to fund critical capital-intensive scaling.",
+    bullets: [
+      "Investment proposition",
+      "Capital strategy",
+      "Investor mapping",
+      "Strategic investor engagement",
+      "Capital formation",
+    ],
+    capitalScale: "$100M — $1B+",
+    corridor: "US Institutional <> GCC Sovereign LPs",
     advisoryRole: "Lead Strategic Advisor & Transaction Architect",
+  },
+  {
+    id: "mega-projects-deployment",
+    label: "Mega Projects & Deployment",
+    vectorId: "MANDATE #P-04",
+    badge: "GIGA INFRASTRUCTURE",
+    title: "Mega Projects & Deployment",
+    description:
+      "Integrating novel industrial decarbonisation, materials, and deep-tech architectures directly into signature sovereign giga-projects and master developments.",
+    bullets: [
+      "Project commercialisation",
+      "Capital strategy",
+      "Strategic partnerships",
+      "Stakeholder management",
+      "Deployment ecosystem development",
+    ],
+    capitalScale: "$250M — $5B+",
+    corridor: "Cross-Border Economic Corridors",
+    advisoryRole: "Mega-Project Partner & Localization Lead",
   },
 ];
 
 export const Mandates: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("all");
+  const [activeTabId, setActiveTabId] = useState<string>("commercialisation-strategy");
 
-  const filteredMandates =
-    activeTab === "all"
-      ? mandatesList
-      : mandatesList.filter((m) => m.category === activeTab);
+  const currentTab =
+    mandateTabs.find((t) => t.id === activeTabId) || mandateTabs[0];
 
   return (
     <section
@@ -105,19 +133,19 @@ export const Mandates: React.FC = () => {
           </p>
         </div>
 
-        {/* Tab Controls (Pills matching image) */}
-        <div className="flex flex-wrap gap-2.5 mb-12">
+        {/* 4 Square Tabs for 4 Types of Mandates (rounded-none, no corner border curve) */}
+        <div className="flex flex-wrap gap-3 mb-10">
           {mandateTabs.map((tab) => {
-            const isActive = tab.id === activeTab;
+            const isActive = tab.id === activeTabId;
             return (
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                onClick={() => setActiveTabId(tab.id)}
+                className={`px-5 py-3 rounded-none text-xs font-semibold uppercase tracking-wider transition-all duration-300 border ${
                   isActive
-                    ? "bg-brand-gold text-[#04120E] shadow-lg shadow-brand-gold/20"
-                    : "bg-[#061A15] text-[#86A39E] hover:text-white hover:bg-[#0A261F] border border-[#143B30]"
+                    ? "bg-brand-gold text-[#04120E] border-brand-gold shadow-lg shadow-brand-gold/15"
+                    : "bg-[#061A15] text-[#86A39E] hover:text-white hover:bg-[#0A261F] border-[#143B30]"
                 }`}
               >
                 {tab.label}
@@ -126,87 +154,87 @@ export const Mandates: React.FC = () => {
           })}
         </div>
 
-        {/* 3 Dark Green Mandate Cards Grid matching image */}
+        {/* Active Mandate Content with exact Bullet Points */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeTab}
+            key={currentTab.id}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-7 md:gap-8"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] hover:border-brand-gold/60 p-8 sm:p-10 md:p-12 rounded-none transition-all duration-300 shadow-2xl shadow-[#020A07]/60"
           >
-            {filteredMandates.map((mandate) => (
-              <div
-                key={mandate.vectorId}
-                className="bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] hover:border-brand-gold/60 p-8 md:p-9 rounded-none transition-all duration-300 hover:shadow-2xl hover:shadow-[#020A07]/60 flex flex-col justify-between group"
-              >
+            {/* Card Top Row: Vector Identifier & Status Badge */}
+            <div className="flex items-center justify-between pb-6 mb-8 border-b border-[#143B30]/70 text-xs">
+              <div className="flex items-center gap-2 text-brand-gold font-mono tracking-wider">
+                <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
+                <span className="font-semibold text-xs sm:text-sm">{currentTab.vectorId}</span>
+              </div>
+              <span className="px-3 py-1 text-[10.5px] uppercase tracking-wider font-semibold rounded-none border border-brand-gold/40 text-brand-gold bg-brand-gold/10">
+                {currentTab.badge}
+              </span>
+            </div>
+
+            {/* Two-Column Editorial Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+              {/* Left Column: Title, Overview, Metrics */}
+              <div className="lg:col-span-6 flex flex-col justify-between">
                 <div>
-                  {/* Top Vector ID & Status Badge */}
-                  <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#143B30]/70 text-xs">
-                    <div className="flex items-center gap-2 text-brand-gold/90 font-mono text-xs tracking-wider">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-gold shrink-0" />
-                      <span className="font-semibold">{mandate.vectorId}</span>
-                    </div>
-                    <span
-                      className={`px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold rounded-none border ${
-                        mandate.status === "EXECUTED"
-                          ? "border-brand-gold/40 text-brand-gold bg-brand-gold/10"
-                          : "border-emerald-500/40 text-emerald-400 bg-emerald-500/10"
-                      }`}
-                    >
-                      {mandate.status}
-                    </span>
-                  </div>
-
-                  {/* Overline Sub-Category */}
-                  <div className="text-[10.5px] uppercase tracking-[0.25em] font-medium text-[#7E9A94] mb-3">
-                    {mandate.subCategory}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-xl sm:text-[22px] text-white font-normal mb-4 group-hover:text-brand-gold transition-colors leading-[1.35]">
-                    {mandate.title}
+                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mb-4 tracking-tight leading-[1.3]">
+                    {currentTab.title}
                   </h3>
-
-                  {/* Description */}
-                  <p className="text-[#96ACA8] text-xs sm:text-[13px] leading-relaxed font-light mb-8">
-                    {mandate.description}
+                  <p className="text-[#96ACA8] text-sm sm:text-base leading-relaxed font-light mb-8">
+                    {currentTab.description}
                   </p>
                 </div>
 
-                {/* Bottom Metrics Grid */}
-                <div className="pt-6 border-t border-[#143B30]/70">
-                  <div className="grid grid-cols-2 gap-4 mb-5">
-                    <div>
-                      <div className="text-[9.5px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
-                        TARGET CAPITAL SCALE
-                      </div>
-                      <div className="font-serif text-lg sm:text-xl font-normal text-brand-gold">
-                        {mandate.capitalScale}
-                      </div>
+                {/* Corridor & Advisory Metrics */}
+                <div className="pt-6 border-t border-[#143B30]/70 grid grid-cols-2 gap-5">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
+                      TARGET CAPITAL SCALE
                     </div>
-                    <div>
-                      <div className="text-[9.5px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
-                        CORRIDOR
-                      </div>
-                      <div className="text-xs sm:text-[13px] text-white/90 font-medium">
-                        {mandate.corridor}
-                      </div>
+                    <div className="font-serif text-lg sm:text-xl font-normal text-brand-gold">
+                      {currentTab.capitalScale}
                     </div>
                   </div>
-
                   <div>
-                    <div className="text-[9.5px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1">
+                    <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
+                      CORRIDOR
+                    </div>
+                    <div className="text-xs sm:text-[13px] text-white/90 font-medium">
+                      {currentTab.corridor}
+                    </div>
+                  </div>
+                  <div className="col-span-2 pt-2">
+                    <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1">
                       ADVISORY ROLE
                     </div>
-                    <div className="text-xs sm:text-[12.5px] text-[#A2B8B4] font-light">
-                      {mandate.advisoryRole}
+                    <div className="text-xs sm:text-[13px] text-[#A2B8B4] font-light">
+                      {currentTab.advisoryRole}
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+
+              {/* Right Column: Exact 5 Bullet Points */}
+              <div className="lg:col-span-6 bg-[#04120E]/80 border border-[#143B30]/80 p-6 sm:p-8 rounded-none flex flex-col justify-center">
+                <div className="text-xs uppercase tracking-[0.25em] font-semibold text-brand-gold mb-6 pb-3 border-b border-[#143B30]/70">
+                  Core Execution Scope &amp; Deliverables
+                </div>
+                <ul className="space-y-4">
+                  {currentTab.bullets.map((bullet, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3.5 text-sm sm:text-[14.5px] text-white/90 font-light"
+                    >
+                      <span className="text-brand-gold mt-0.5 text-base leading-none select-none">●</span>
+                      <span className="leading-snug text-[#D8E6E3]">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
