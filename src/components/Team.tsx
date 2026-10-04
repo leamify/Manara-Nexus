@@ -30,7 +30,7 @@ const partners: Partner[] = [
 export const Team: React.FC = () => {
   return (
     <section
-      id="about"
+      id="team"
       className="bg-[#F8F9FA] py-24 md:py-32 px-6 md:px-12 relative border-t border-neutral-200/60"
     >
       <div className="max-w-7xl mx-auto">

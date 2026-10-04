@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export const Positioning: React.FC = () => {
   return (
     <section
-      id="positioning"
+      id="about"
       className="bg-[#F4F6F4] py-24 md:py-32 px-6 md:px-12 relative overflow-hidden border-b border-[#E2E6E3]"
     >
       <div className="max-w-4xl mx-auto text-center relative z-10">
