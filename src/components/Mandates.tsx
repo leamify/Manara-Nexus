@@ -2,27 +2,21 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 
 interface MandateTab {
   id: string;
   label: string;
-  vectorId: string;
-  badge: string;
   title: string;
   description: string;
   bullets: string[];
   capitalScale: string;
   corridor: string;
-  advisoryRole: string;
 }
 
 const mandateTabs: MandateTab[] = [
   {
     id: "commercialisation-strategy",
     label: "Commercialisation Strategy",
-    vectorId: "MANDATE #C-01",
-    badge: "MARKET ROLLOUT",
     title: "Commercialisation Strategy",
     description:
       "Structured techno-commercial architecture and validation models to transition high-growth technologies into sovereign and corporate deployment pipelines.",
@@ -35,13 +29,10 @@ const mandateTabs: MandateTab[] = [
     ],
     capitalScale: "$50M — $300M+",
     corridor: "US <> GCC Sovereign Corridor",
-    advisoryRole: "Lead Strategic Advisor & Commercial Architect",
   },
   {
     id: "market-access-partnerships",
     label: "Market Access & Partnerships",
-    vectorId: "MANDATE #M-02",
-    badge: "CROSS-BORDER JV",
     title: "Market Access & Partnerships",
     description:
       "Bilateral joint ventures, industrial localization frameworks, and high-level stakeholder orchestration across sovereign and corporate conglomerates.",
@@ -54,13 +45,10 @@ const mandateTabs: MandateTab[] = [
     ],
     capitalScale: "$75M — $500M+",
     corridor: "US <> Saudi Arabia & UAE",
-    advisoryRole: "JV Architect & Sovereign Alignment Partner",
   },
   {
     id: "investment-readiness-strategic-capital",
     label: "Investment Readiness & Strategic Capital",
-    vectorId: "MANDATE #S-03",
-    badge: "SYNDICATE STRUCTURING",
     title: "Investment Readiness & Strategic Capital",
     description:
       "Institutional syndicate formation, bankability analysis, and dual sovereign wealth fund alignment to fund critical capital-intensive scaling.",
@@ -73,13 +61,10 @@ const mandateTabs: MandateTab[] = [
     ],
     capitalScale: "$100M — $1B+",
     corridor: "US Institutional <> GCC Sovereign LPs",
-    advisoryRole: "Lead Strategic Advisor & Transaction Architect",
   },
   {
     id: "mega-projects-deployment",
     label: "Mega Projects & Deployment",
-    vectorId: "MANDATE #P-04",
-    badge: "GIGA INFRASTRUCTURE",
     title: "Mega Projects & Deployment",
     description:
       "Integrating novel industrial decarbonisation, materials, and deep-tech architectures directly into signature sovereign giga-projects and master developments.",
@@ -92,7 +77,6 @@ const mandateTabs: MandateTab[] = [
     ],
     capitalScale: "$250M — $5B+",
     corridor: "Cross-Border Economic Corridors",
-    advisoryRole: "Mega-Project Partner & Localization Lead",
   },
 ];
 
@@ -164,17 +148,6 @@ export const Mandates: React.FC = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] hover:border-brand-gold/60 p-8 sm:p-10 md:p-12 rounded-none transition-all duration-300 shadow-2xl shadow-[#020A07]/60"
           >
-            {/* Card Top Row: Vector Identifier & Status Badge */}
-            <div className="flex items-center justify-between pb-6 mb-8 border-b border-[#143B30]/70 text-xs">
-              <div className="flex items-center gap-2 text-brand-gold font-mono tracking-wider">
-                <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0" />
-                <span className="font-semibold text-xs sm:text-sm">{currentTab.vectorId}</span>
-              </div>
-              <span className="px-3 py-1 text-[10.5px] uppercase tracking-wider font-semibold rounded-none border border-brand-gold/40 text-brand-gold bg-brand-gold/10">
-                {currentTab.badge}
-              </span>
-            </div>
-
             {/* Two-Column Editorial Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               {/* Left Column: Title, Overview, Metrics */}
@@ -188,7 +161,7 @@ export const Mandates: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Corridor & Advisory Metrics */}
+                {/* Corridor & Scale Metrics */}
                 <div className="pt-6 border-t border-[#143B30]/70 grid grid-cols-2 gap-5">
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
@@ -204,14 +177,6 @@ export const Mandates: React.FC = () => {
                     </div>
                     <div className="text-xs sm:text-[13px] text-white/90 font-medium">
                       {currentTab.corridor}
-                    </div>
-                  </div>
-                  <div className="col-span-2 pt-2">
-                    <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1">
-                      ADVISORY ROLE
-                    </div>
-                    <div className="text-xs sm:text-[13px] text-[#A2B8B4] font-light">
-                      {currentTab.advisoryRole}
                     </div>
                   </div>
                 </div>
