@@ -131,12 +131,12 @@ export const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Column 1: Official Logo & Entity */}
           <div className="space-y-4">
-            <div className="relative h-12 w-52">
+            <div className="relative h-24 sm:h-28 md:h-32 w-32 sm:w-36 md:w-40 overflow-hidden rounded-none border border-brand-gold/30 shadow-2xl">
               <Image
-                src="/images/manara-logo.jpg"
+                src="https://res.cloudinary.com/g9q4th37/image/upload/v1791141388/Manara_Nexus_logo_draft.jpg"
                 alt="Manara Nexus Logo"
                 fill
-                className="object-contain object-left mix-blend-screen filter brightness-110"
+                className="object-contain bg-[#061019]"
               />
             </div>
             <p className="text-xs text-brand-gray-muted leading-relaxed font-sans font-light">

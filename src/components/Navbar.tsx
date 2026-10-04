@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
           className="flex items-center group focus:outline-none"
           aria-label="Manara Nexus Home"
         >
-          <div className="relative h-12 md:h-14 w-52 sm:w-60 md:w-64 transition-transform duration-300 group-hover:scale-[1.02]">
+          <div className="relative h-14 sm:h-16 md:h-20 lg:h-[84px] w-52 sm:w-64 md:w-80 lg:w-96 transition-transform duration-300 group-hover:scale-[1.02]">
             <Image
               src="/images/manara-logo.jpg"
               alt="Manara Nexus Logo"
