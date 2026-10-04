@@ -37,6 +37,15 @@ export const metadata: Metadata = {
   title: "Manara Nexus | Strategic Advisory — US & GCC Corridor",
   description:
     "Connecting Innovation <> Commercialisation <> Strategic Capital. High-end corporate strategic advisory firm operating at the intersection of technology, industry and capital.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   keywords: [
     "Manara Nexus",
     "Strategic Advisory",
