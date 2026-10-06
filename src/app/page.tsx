@@ -8,10 +8,14 @@ import { Sectors } from "@/components/Sectors";
 import { Mandates } from "@/components/Mandates";
 import { Team } from "@/components/Team";
 import { Footer } from "@/components/Footer";
+import { VersionSwitcher } from "@/components/VersionSwitcher";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-brand-navy text-brand-gray-light selection:bg-brand-gold/30 selection:text-white">
+      {/* Floating Version Switcher for Client Review */}
+      <VersionSwitcher current="home-1" />
+
       {/* Fixed Navigation Header */}
       <Navbar />
 

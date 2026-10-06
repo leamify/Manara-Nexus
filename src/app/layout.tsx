@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter, Cormorant_Garamond, Cinzel } from "next/font/google";
+import { Playfair_Display, Inter, Cormorant_Garamond, Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -14,10 +15,17 @@ const inter = Inter({
   display: "swap",
 });
 
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -68,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} ${cormorant.variable} ${cinzel.variable}`}
+      className={`${playfair.variable} ${inter.variable} ${jakarta.variable} ${cormorant.variable} ${cinzel.variable}`}
     >
       <body className="font-sans antialiased bg-[#040C0A] text-brand-gray-light selection:bg-brand-gold/30 selection:text-white min-h-screen">
         {children}
