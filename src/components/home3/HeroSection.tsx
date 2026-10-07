@@ -6,6 +6,9 @@ import { ArrowDown } from "lucide-react";
 export const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const videoUrl =
+    "https://res.cloudinary.com/g9q4th37/video/upload/v1791393378/gemini_generated_video_45d799fd.mp4";
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -43,8 +46,8 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   const handleVideoError = () => {
-    if (videoRef.current && videoRef.current.src !== "/videos/hero-bg.mp4") {
-      videoRef.current.src = "/videos/hero-bg.mp4";
+    if (videoRef.current && videoRef.current.src !== "/videos/home3-hero.mp4") {
+      videoRef.current.src = "/videos/home3-hero.mp4";
       videoRef.current.load();
       videoRef.current.play().catch(() => {});
     }
@@ -61,48 +64,38 @@ export const HeroSection: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          poster="/images/hero-skyline.jpg"
+          poster="/images/slider-skyline.jpg"
           onError={handleVideoError}
-          src="https://res.cloudinary.com/g9q4th37/video/upload/v1791042169/14629596_3840_2160_60fps.mp4"
+          src={videoUrl}
           className="w-full h-full object-cover object-center scale-105"
           style={{
-            filter: "brightness(0.88) contrast(1.1) hue-rotate(50deg) saturate(0.95)",
+            filter: "brightness(1.02) contrast(1.05)",
           }}
         >
-          <source
-            src="https://res.cloudinary.com/g9q4th37/video/upload/v1791042169/14629596_3840_2160_60fps.mp4"
-            type="video/mp4"
-          />
+          <source src={videoUrl} type="video/mp4" />
+          <source src="/videos/home3-hero.mp4" type="video/mp4" />
           <source src="/videos/hero-bg.mp4" type="video/mp4" />
         </video>
 
-        {/* Primary Rich Forest Green Tint Layer */}
-        <div className="absolute inset-0 bg-[#09241C]/30 mix-blend-color pointer-events-none" />
+        {/* Subtle Brand Emerald Atmospheric Tint */}
+        <div className="absolute inset-0 bg-[#09241C]/15 pointer-events-none" />
 
-        {/* Balanced Atmospheric Contrast Overlays for Content Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030C09]/55 via-[#051712]/40 to-[#030C09]/70 pointer-events-none z-[1]" />
-        <div
-          className="absolute inset-0 pointer-events-none z-[1]"
-          style={{
-            background:
-              "radial-gradient(ellipse 90% 75% at 50% 50%, rgba(4, 16, 12, 0.15) 0%, rgba(3, 10, 8, 0.45) 65%, #020705 100%)",
-          }}
-        />
+        {/* Light Cinematic Gradients for Natural Brightness & Architectural Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030C09]/45 via-transparent to-[#030C09]/60 pointer-events-none z-[1]" />
 
         {/* Subtle Atmospheric Top Green Glow */}
         <div
-          className="absolute top-0 left-0 right-0 h-36 sm:h-44 pointer-events-none z-[2]"
+          className="absolute top-0 left-0 right-0 h-32 sm:h-40 pointer-events-none z-[2]"
           style={{
             background:
-              "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(24, 120, 92, 0.15) 0%, rgba(15, 75, 58, 0.05) 50%, transparent 80%)",
+              "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(24, 120, 92, 0.12) 0%, transparent 70%)",
           }}
         />
       </div>
 
-      {/* 2. Main Hero Content Matching Screenshot (Image 1) */}
+      {/* 2. Main Hero Content Matching Architectural Screenshot */}
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-16 sm:pt-20 pb-8">
         <div className="max-w-5xl flex flex-col items-start text-left">
-
           {/* Trans-Regional Corridor Sub-Label Above Title */}
           <div className="flex items-center gap-3 text-xs sm:text-[13px] uppercase tracking-[0.24em] text-brand-gold font-sans font-semibold mb-6 sm:mb-8">
             <span className="w-8 h-[1px] bg-brand-gold/70" />
@@ -127,9 +120,7 @@ export const HeroSection: React.FC = () => {
             <span className="text-brand-gold font-normal ml-2">]</span>
           </h1>
 
-
-
-          {/* Dual Action Buttons Matching Image 1 */}
+          {/* Dual Action Buttons Matching Architectural Concept */}
           <div className="flex flex-wrap items-center gap-4 font-sans w-full sm:w-auto">
             <a
               href="#mandates"

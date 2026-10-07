@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 md:px-12 select-none bg-[#030A08]"
     >
-      {/* 1. Cinematic Background Video with Rich Green-Black Palette */}
+      {/* 1. Cinematic Background Video with Vivid Natural Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           ref={videoRef}
@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
           src="https://res.cloudinary.com/g9q4th37/video/upload/v1791042169/14629596_3840_2160_60fps.mp4"
           className="w-full h-full object-cover object-center scale-105"
           style={{
-            filter: "brightness(0.72) contrast(1.15) hue-rotate(65deg) saturate(0.85)",
+            filter: "brightness(1.0) contrast(1.05)",
           }}
         >
           <source
@@ -103,28 +103,20 @@ export const HeroSection: React.FC = () => {
           <source src="/videos/hero-bg.mp4" type="video/mp4" />
         </video>
 
-        {/* Primary Rich Forest Green Tint Layer */}
-        <div className="absolute inset-0 bg-[#09241C]/50 mix-blend-color pointer-events-none" />
+        {/* Subtle Brand Emerald Atmospheric Tint */}
+        <div className="absolute inset-0 bg-[#09241C]/15 pointer-events-none" />
 
-        {/* Balanced Green-Black Atmospheric Contrast Overlays for Content Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030C09]/80 via-[#051712]/68 to-[#030C09]/88 pointer-events-none z-[1]" />
+        {/* Light Cinematic Gradients for Natural Brightness & Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030C09]/45 via-transparent to-[#030C09]/60 pointer-events-none z-[1]" />
+
+        {/* Subtle Atmospheric Top Green Glow */}
         <div
-          className="absolute inset-0 pointer-events-none z-[1]"
+          className="absolute top-0 left-0 right-0 h-32 sm:h-40 pointer-events-none z-[2]"
           style={{
             background:
-              "radial-gradient(ellipse 90% 75% at 50% 50%, rgba(4, 16, 12, 0.45) 0%, rgba(3, 10, 8, 0.78) 65%, #020705 100%)",
+              "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(24, 120, 92, 0.12) 0%, transparent 70%)",
           }}
         />
-
-        {/* Subtle Atmospheric Top Green Glow - Only Visible on Hero Section */}
-        <div
-          className="absolute top-0 left-0 right-0 h-36 sm:h-44 pointer-events-none z-[2]"
-          style={{
-            background:
-              "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(24, 120, 92, 0.15) 0%, rgba(15, 75, 58, 0.05) 50%, transparent 80%)",
-          }}
-        />
-        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#18755A]/12 via-[#0F4E3C]/03 to-transparent pointer-events-none z-[2]" />
       </div>
 
       {/* 2. Main Hero Content with Generous Editorial Spacing */}
