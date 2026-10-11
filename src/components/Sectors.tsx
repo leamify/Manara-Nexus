@@ -84,7 +84,7 @@ export const Sectors: React.FC = () => {
   return (
     <section
       id="sectors"
-      className="bg-[#030A08] text-white py-24 md:py-32 px-6 md:px-12 relative overflow-hidden border-t border-[#12362C]/60"
+      className="bg-[#030A08] text-white py-12 sm:py-16 md:py-20 px-6 md:px-12 relative overflow-hidden border-t border-[#12362C]/60"
     >
       {/* Background Subtle Green Radial Glow & Grid */}
       <div
@@ -98,8 +98,8 @@ export const Sectors: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/25 mb-6">
+        <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/25 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-brand-gold">
               Sector and Ecosystem
@@ -160,7 +160,7 @@ export const Sectors: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 md:mt-20 max-w-3xl mx-auto"
+          className="mt-10 sm:mt-12 md:mt-14 max-w-3xl mx-auto"
         >
           <div className="border border-brand-gold/40 bg-gradient-to-r from-[#051713] via-[#092820] to-[#051713] p-6 md:p-8 rounded-lg text-center relative shadow-xl shadow-black/40">
             {/* Corner geometric accents */}

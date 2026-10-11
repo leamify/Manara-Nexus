@@ -28,21 +28,19 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="bg-[#050C17] text-brand-gray-muted relative border-t border-brand-gold/20">
-      {/* 1. Initiate Strategic Dialogue Banner Matching Reference Screenshot */}
-      <div className="py-24 md:py-28 px-6 md:px-12 text-center relative overflow-hidden bg-gradient-to-b from-[#070F1F] via-[#050C17] to-[#040913]">
-        <div className="absolute inset-0 bg-radial-[circle_at_center,rgba(197,160,89,0.06)_0%,transparent_70%] pointer-events-none" />
-
+    <footer id="contact" className="bg-[#030D0A] text-[#86A39E] relative border-t border-[#164335]">
+      {/* 1. Initiate Strategic Dialogue Banner */}
+      <div className="py-12 sm:py-16 md:py-20 px-6 md:px-12 text-center relative bg-[#092F26]">
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-4">
-            CONFIDENTIAL ENGAGEMENT
+          <div className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3 sm:mb-4">
+            CONTACT US
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-white font-normal tracking-tight mb-5 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-white font-normal tracking-tight mb-4 sm:mb-5 leading-tight">
             Initiate Strategic Dialogue
           </h2>
 
-          <p className="text-brand-gray-light/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light mb-10">
+          <p className="text-[#C2D8D2] text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light mb-7 sm:mb-8">
             Engage with our Managing Partners to assess cross-border commercialisation, strategic capital formation, or sovereign project deployment.
           </p>
 
@@ -50,13 +48,13 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-brand-navy font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/20"
+              className="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-[#04120E] font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/25"
             >
               SCHEDULE STRATEGIC BRIEFING
             </button>
             <a
               href="mailto:advisory@manaranexus.com?subject=Institutional%20Overview%20Request"
-              className="w-full sm:w-auto px-8 py-3.5 border border-brand-gold/40 bg-[#0A1424]/80 text-brand-gray-light font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/10 transition-all duration-300"
+              className="w-full sm:w-auto px-8 py-3.5 border border-brand-gold/40 bg-[#082C22]/90 text-[#D5E5E0] font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/10 transition-all duration-300"
             >
               REQUEST INSTITUTIONAL OVERVIEW
             </a>
@@ -67,15 +65,15 @@ export const Footer: React.FC = () => {
       {/* Briefing Modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="bg-[#070F1E] border border-brand-gold/40 p-8 rounded-sm max-w-lg w-full relative shadow-2xl">
+          <div className="bg-[#07241C] border border-brand-gold/40 p-8 rounded-sm max-w-lg w-full relative shadow-2xl">
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-4 right-4 text-brand-gray-muted hover:text-white text-lg"
+              className="absolute top-4 right-4 text-[#86A39E] hover:text-white text-lg"
             >
               ✕
             </button>
             <h3 className="font-serif text-2xl text-white font-normal mb-2">Schedule Strategic Briefing</h3>
-            <p className="text-xs text-brand-gray-muted mb-6">
+            <p className="text-xs text-[#86A39E] mb-6">
               Our Managing Partners review all briefs under strict non-disclosure protocol.
             </p>
 
@@ -83,31 +81,31 @@ export const Footer: React.FC = () => {
               <div className="p-6 bg-brand-gold/10 border border-brand-gold/40 text-center rounded-sm">
                 <CheckCircle2 className="w-8 h-8 text-brand-gold mx-auto mb-2" />
                 <p className="text-white font-semibold text-sm">Briefing Request Received</p>
-                <p className="text-xs text-brand-gray-muted mt-1">We will respond within 24 business hours.</p>
+                <p className="text-xs text-[#86A39E] mt-1">We will respond within 24 business hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-left">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-brand-gray-muted mb-1">Name & Organization</label>
+                  <label className="block text-xs uppercase tracking-wider text-[#86A39E] mb-1">Name & Organization</label>
                   <input
                     required
                     type="text"
                     placeholder="e.g. Marcus Sterling, Sovereign Capital"
-                    className="w-full bg-[#03070E] border border-white/10 rounded-sm px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold"
+                    className="w-full bg-[#041410] border border-[#143B30] rounded-sm px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-brand-gray-muted mb-1">Institutional Email</label>
+                  <label className="block text-xs uppercase tracking-wider text-[#86A39E] mb-1">Institutional Email</label>
                   <input
                     required
                     type="email"
                     placeholder="m.sterling@institution.com"
-                    className="w-full bg-[#03070E] border border-white/10 rounded-sm px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold"
+                    className="w-full bg-[#041410] border border-[#143B30] rounded-sm px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-brand-gray-muted mb-1">Target Mandate</label>
-                  <select className="w-full bg-[#03070E] border border-white/10 rounded-sm px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
+                  <label className="block text-xs uppercase tracking-wider text-[#86A39E] mb-1">Target Mandate</label>
+                  <select className="w-full bg-[#041410] border border-[#143B30] rounded-sm px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
                     <option>Commercialisation Strategy</option>
                     <option>Market Access & Partnerships</option>
                     <option>Investment Readiness & Strategic Capital</option>
@@ -116,7 +114,7 @@ export const Footer: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-brand-gold text-brand-navy font-semibold text-xs uppercase tracking-widest rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+                  className="w-full py-3 bg-brand-gold text-[#04120E] font-semibold text-xs uppercase tracking-widest rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
                 >
                   Submit Confidential Brief
                 </button>
@@ -127,7 +125,7 @@ export const Footer: React.FC = () => {
       )}
 
       {/* 2. Multi-column Footer Layout matching screenshot */}
-      <div className="border-t border-white/10 pt-16 pb-12 px-6 md:px-12">
+      <div className="border-t border-[#133A2E] bg-[#030E0B] pt-16 pb-12 px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Column 1: Official Logo & Entity */}
           <div className="space-y-4">

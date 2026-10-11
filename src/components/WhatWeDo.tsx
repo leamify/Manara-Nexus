@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Compass, TrendingUp, Landmark, Briefcase, ArrowRight } from "lucide-react";
+import { Compass, TrendingUp, Landmark, Briefcase } from "lucide-react";
 
 interface ServiceItem {
   id: string;
@@ -72,10 +72,10 @@ export const WhatWeDo: React.FC = () => {
   };
 
   return (
-    <section id="what-we-do" className="bg-[#F6F7F9] py-24 md:py-32 px-6 md:px-12 relative border-t border-neutral-200/60">
+    <section id="what-we-do" className="bg-[#F6F7F9] py-12 sm:py-16 md:py-20 px-6 md:px-12 relative border-t border-neutral-200/60">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="mb-14 md:mb-16">
+        <div className="mb-8 sm:mb-10">
           <div className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3">
             WHAT WE DO
           </div>
@@ -90,7 +90,7 @@ export const WhatWeDo: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7"
         >
           {services.map((service) => {
             const Icon = service.icon;
@@ -98,7 +98,7 @@ export const WhatWeDo: React.FC = () => {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-8 md:p-10 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#06181B]/50 flex flex-col justify-between overflow-hidden"
+                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-6 sm:p-7 md:p-8 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#06181B]/50 overflow-hidden"
               >
                 {/* Background image that is revealed slightly on hover */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -115,28 +115,19 @@ export const WhatWeDo: React.FC = () => {
                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold rounded-none transition-all duration-500 ease-out group-hover:w-full z-20" />
 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-7">
-                    <span className="font-serif text-3xl font-normal text-brand-gold/90 tracking-wider">
-                      {service.id}
-                    </span>
-                    <div className="w-9 h-9 rounded-full border border-brand-gold/30 bg-[#0F3136] flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                  <div className="flex items-start justify-between gap-4 mb-3 sm:mb-4">
+                    {/* Golden Colored Title at top in place of 01, 02 */}
+                    <h3 className="font-serif text-2xl sm:text-[26px] md:text-3xl text-brand-gold font-normal tracking-tight">
+                      {service.title}
+                    </h3>
+                    <div className="w-9 h-9 rounded-full border border-brand-gold/30 bg-[#0F3136] flex-shrink-0 flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  {/* Golden Colored Title */}
-                  <h3 className="font-serif text-2xl md:text-3xl text-brand-gold font-normal mb-4 tracking-tight">
-                    {service.title}
-                  </h3>
-
                   <p className="text-[#9DB3B5] text-sm sm:text-[14.5px] leading-relaxed font-sans font-light">
                     {service.description}
                   </p>
-                </div>
-
-                {/* Card Footer: Arrow only, bottom texts completely removed */}
-                <div className="mt-8 pt-5 border-t border-[#173D42] flex items-center justify-end relative z-10">
-                  <ArrowRight className="w-4 h-4 text-[#7D9A9C] group-hover:text-brand-gold group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </motion.div>
             );

@@ -89,7 +89,7 @@ export const Mandates: React.FC = () => {
   return (
     <section
       id="mandates"
-      className="bg-[#030A08] text-white py-24 md:py-32 px-6 md:px-12 relative border-t border-[#12362C]/60"
+      className="bg-[#030A08] text-white py-12 sm:py-16 md:py-20 px-6 md:px-12 relative border-t border-[#12362C]/60"
     >
       {/* Background Subtle Green Radial Glow */}
       <div
@@ -102,9 +102,9 @@ export const Mandates: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 pb-8 border-b border-[#143B30]/60 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10 pb-6 border-b border-[#143B30]/60 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-4">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
               <span>MANDATES</span>
             </div>
@@ -118,7 +118,7 @@ export const Mandates: React.FC = () => {
         </div>
 
         {/* 4 Square Tabs for 4 Types of Mandates (rounded-none, no corner border curve) */}
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap gap-3 mb-8">
           {mandateTabs.map((tab) => {
             const isActive = tab.id === activeTabId;
             return (

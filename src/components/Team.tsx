@@ -31,12 +31,12 @@ export const Team: React.FC = () => {
   return (
     <section
       id="team"
-      className="bg-[#F8F9FA] py-24 md:py-32 px-6 md:px-12 relative border-t border-neutral-200/60"
+      className="bg-[#F8F9FA] py-12 sm:py-16 md:py-20 px-6 md:px-12 relative border-t border-neutral-200/60"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="max-w-3xl mb-14 md:mb-16">
-          <div className="inline-flex items-center gap-2 mb-3">
+        <div className="max-w-3xl mb-8 sm:mb-10">
+          <div className="inline-flex items-center gap-2 mb-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
             <span className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold">
               EXECUTIVE LEADERSHIP
@@ -56,10 +56,10 @@ export const Team: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.15 }}
-              className="bg-[#061814]/95 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] rounded-none overflow-hidden hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#020A07]/50 flex flex-col sm:flex-row group"
+              className="bg-[#092F26] border border-[#164E3E] rounded-none overflow-hidden hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#02100B]/30 flex flex-col sm:flex-row group"
             >
               {/* Executive Portrait on Left */}
-              <div className="relative w-full sm:w-[240px] md:w-[260px] h-[360px] sm:h-auto shrink-0 bg-[#040D0A]">
+              <div className="relative w-full sm:w-[240px] md:w-[260px] h-[360px] sm:h-auto shrink-0 bg-[#041410]">
                 <Image
                   src={partner.image}
                   alt={partner.name}
@@ -67,7 +67,7 @@ export const Team: React.FC = () => {
                   priority
                   className="object-cover object-top filter brightness-[0.98] contrast-[1.03] transition-all duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#061A15]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent to-[#092F26]/70 pointer-events-none" />
               </div>
 
               {/* Bio & Credentials on Right */}
@@ -108,7 +108,7 @@ export const Team: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-12 sm:mt-16 max-w-4xl mx-auto"
         >
-          <div className="bg-[#061814]/90 bg-gradient-to-r from-[#09241E] via-[#061A15] to-[#09241E] border border-[#143B30] p-6 sm:p-8 rounded-none text-center shadow-xl shadow-black/10">
+          <div className="bg-[#092F26] border border-[#164E3E] p-6 sm:p-8 rounded-none text-center shadow-xl shadow-[#02100B]/20">
             <p className="font-serif text-base sm:text-lg md:text-xl text-[#DFBA73] font-normal italic leading-relaxed">
               “Together, the Managing Partners bring complementary expertise across
               commercialisation, technology, transactions, strategic capital and GCC

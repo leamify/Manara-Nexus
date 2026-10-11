@@ -7,12 +7,12 @@ export const Positioning: React.FC = () => {
   return (
     <section
       id="about"
-      className="bg-[#F4F6F4] py-24 md:py-32 px-6 md:px-12 relative overflow-hidden border-b border-[#E2E6E3]"
+      className="bg-[#F4F6F4] py-12 sm:py-16 md:py-20 px-6 md:px-12 relative overflow-hidden border-b border-[#E2E6E3]"
     >
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="flex flex-col items-center">
           {/* Top Ornament: Lines with Darker Golden 8-Pointed Star */}
-          <div className="flex items-center justify-center gap-4 mb-5">
+          <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-16 sm:w-24 h-[1px] bg-[#9E7B38]/50" />
             <svg
               className="w-4 h-4 text-[#9E7B38]"
@@ -25,16 +25,17 @@ export const Positioning: React.FC = () => {
           </div>
 
           {/* Section Subtitle Title: US | GCC */}
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.38em] font-semibold text-[#9E7B38] font-sans mb-8">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.38em] font-semibold text-[#9E7B38] font-sans mb-5 sm:mb-6">
             US | GCC
           </span>
 
-          {/* Core Editorial Quote Matching Reference */}
-          <blockquote className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] xl:text-[40px] leading-[1.38] md:leading-[1.36] text-[#0A1612] font-normal max-w-4xl tracking-tight mb-10 sm:mb-12">
-            “Manara Nexus operates at the intersection of technology, industry
-            and capital, helping high-potential technologies and projects
-            progress from technical opportunity to commercially viable,
-            investment-ready and deployable value propositions.”
+          {/* Core Editorial Quote: Scaled to fit comfortably in 3 lines */}
+          <blockquote className="font-serif text-lg sm:text-xl md:text-[23px] lg:text-[26px] leading-[1.48] text-[#0A1612] font-normal max-w-5xl tracking-tight mb-7 sm:mb-8">
+            “Manara Nexus operates at the intersection of technology, industry and capital,
+            <br className="hidden md:inline" />{" "}
+            helping high-potential technologies and projects progress from technical opportunity
+            <br className="hidden md:inline" />{" "}
+            to commercially viable, investment-ready and deployable value propositions.”
           </blockquote>
 
           {/* Bottom Architectural Mandate Line Matching Reference */}
