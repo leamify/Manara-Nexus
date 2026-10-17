@@ -30,11 +30,11 @@ export default function Home() {
       {/* 5. Architected for Cross-Border Precision & Sovereign Scale (3 White Cards) */}
       <StrategicAdvantage />
 
-      {/* 6. Sovereign & Industrial Mandate Matrix (Tabbed 3-Track Grid) */}
-      <Mandates />
-
-      {/* 7. Executive Leadership: Managing Partners with Authentic Portraits */}
+      {/* 6. Executive Leadership: Managing Partners with Authentic Portraits */}
       <Team />
+
+      {/* 7. Sovereign & Industrial Mandate Matrix (Tabbed 3-Track Grid) */}
+      <Mandates />
 
       {/* 8. Initiate Strategic Dialogue CTA & Comprehensive Footer */}
       <Footer />

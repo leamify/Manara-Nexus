@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const slideDuration = 6500; // 6.5s per slide
+  const slideDuration = 3250; // Fastened by 50% (was 6500ms)
 
   // Autoplay timer
   useEffect(() => {
@@ -66,19 +66,19 @@ export const HeroSection: React.FC = () => {
       onMouseLeave={() => setIsPaused(false)}
       className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 sm:px-10 md:px-16 lg:px-20 select-none bg-[#030A08]"
     >
-      {/* 1. Cinematic Background Image Slider / Carousel from Home 2 */}
+      {/* 1. Cinematic Background Image Slider / Carousel */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 isActive ? "opacity-100 z-[1]" : "opacity-0 z-0 pointer-events-none"
               }`}
             >
               <div
-                className={`relative w-full h-full transition-transform duration-[7000ms] ease-out ${
+                className={`relative w-full h-full origin-top transition-transform duration-[4000ms] ease-out ${
                   isActive ? "scale-105" : "scale-100"
                 }`}
               >
@@ -87,7 +87,7 @@ export const HeroSection: React.FC = () => {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                   sizes="100vw"
                 />
               </div>
@@ -111,40 +111,33 @@ export const HeroSection: React.FC = () => {
 
       {/* 2. Main Hero Content: Left-Aligned Editorial Layout */}
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-32 sm:pt-36 pb-28 sm:pb-32">
-        <div className="max-w-4xl flex flex-col items-start text-left">
-          {/* Pill Badge: UNITED STATES ⟷ GCC ECOSYSTEMS */}
-          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-brand-gold/40 bg-[#061814]/85 backdrop-blur-md mb-8 sm:mb-10 shadow-xl shadow-black/40">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+        <div className="max-w-4xl flex flex-col items-start text-left gap-y-10 sm:gap-y-12 md:gap-y-14 lg:gap-y-16">
+          {/* Pill Badge: MANARA NEXUS */}
+          <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full border border-brand-gold/40 bg-[#061814]/85 backdrop-blur-md shadow-xl shadow-black/40">
             <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-brand-gold font-sans">
-              UNITED STATES
-            </span>
-            <span className="text-brand-gold/60 text-xs font-light">⟷</span>
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-brand-gold font-sans">
-              GCC ECOSYSTEMS
+              MANARA NEXUS
             </span>
           </div>
 
-          {/* Golden & White Serif Headline: Line 1 White, Line 2 Gold */}
+          {/* All-White Serif Headline: 2 lines with smaller font size */}
           <h1
             style={{
-              textShadow: "0 4px 24px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 1)",
+              textShadow: "0 4px 24px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9)",
             }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[52px] font-normal leading-[1.24] tracking-normal mb-8 sm:mb-10 text-left"
+            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] font-normal leading-[1.3] tracking-normal text-white text-left m-0"
           >
-            <span className="text-white">Connecting Innovation &lt;&gt;</span>
+            Connecting Innovation &lt;&gt;
             <br />
-            <span className="text-[#DFBA73]">Commercialisation &lt;&gt;</span>
-            <br />
-            <span className="text-[#DFBA73]">Strategic Capital</span>
+            Commercialisation &lt;&gt; Strategic Capital
           </h1>
 
-          {/* Action Button: EXPLORE MANDATES (Institutional Model removed) */}
+          {/* Action Button: EXPLORE ENGAGEMENT redirecting to #contact */}
           <div className="flex items-center gap-4 font-sans w-full sm:w-auto">
             <a
-              href="#mandates"
+              href="#contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-brand-gold text-[#040D0A] font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/25 group"
             >
-              <span>EXPLORE MANDATES</span>
+              <span>EXPLORE ENGAGEMENT</span>
               <ArrowDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
             </a>
           </div>
@@ -172,7 +165,7 @@ export const HeroSection: React.FC = () => {
                       <div
                         key={`bar-${currentSlide}-${isPaused}`}
                         className={`absolute inset-y-0 left-0 bg-brand-gold rounded-full ${
-                          !isPaused ? "animate-[progress_6.5s_linear]" : "w-full"
+                          !isPaused ? "animate-[progress_3.25s_linear]" : "w-full"
                         }`}
                         style={{
                           animationDuration: `${slideDuration}ms`,
@@ -184,8 +177,6 @@ export const HeroSection: React.FC = () => {
               );
             })}
           </div>
-
-
 
           {/* Right: Slide Controls (Arrows & Play/Pause) */}
           <div className="flex items-center gap-2">

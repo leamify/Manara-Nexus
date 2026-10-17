@@ -99,17 +99,20 @@ export const Sectors: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/25 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/25 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-brand-gold">
-              Sector and Ecosystem
+            <span className="text-sm sm:text-[15px] uppercase tracking-[0.28em] font-semibold text-brand-gold font-sans">
+              Sectors &amp; Ecosystems
             </span>
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[42px] leading-[1.3] text-white font-normal">
-            We focus on technology-led opportunities where innovation, industrial
-            transformation and strategic capital intersect.
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] leading-[1.24] text-white font-normal tracking-tight mb-4 sm:mb-5">
+            Technology-led opportunities. Real-world applications.
           </h2>
+
+          <p className="text-[#A0B8B2] text-sm sm:text-base md:text-[16.5px] leading-relaxed font-sans font-light max-w-2xl mx-auto">
+            We focus on technology-led opportunities where innovation, industrial transformation and strategic capital intersect.
+          </p>
         </div>
 
         {/* 3 Columns Desktop Grid with Rich Dark Green Cards */}
@@ -118,7 +121,7 @@ export const Sectors: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
         >
           {sectorsList.map((sector) => {
             const Icon = sector.icon;
@@ -126,26 +129,22 @@ export const Sectors: React.FC = () => {
               <motion.div
                 key={sector.id}
                 variants={itemVariants}
-                className="group relative p-8 rounded-none bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#020A07]/60 flex flex-col justify-between"
+                className="group relative p-5 sm:p-6 rounded-none bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#020A07]/60 flex flex-col justify-between"
               >
                 {/* Subtle top indicator bar */}
                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold rounded-none transition-all duration-500 ease-out group-hover:w-full" />
 
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-mono tracking-widest text-brand-gold/80">
-                      {sector.id}
-                    </span>
-                    <div className="w-9 h-9 rounded-full border border-brand-gold/25 bg-[#09241D] flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-[#04120E] group-hover:border-brand-gold transition-all duration-300">
+                  <div className="flex items-start justify-between gap-3 mb-2.5">
+                    <h3 className="font-serif text-lg md:text-[19px] font-normal text-white group-hover:text-brand-gold transition-colors duration-200 leading-snug">
+                      {sector.name}
+                    </h3>
+                    <div className="w-8 h-8 rounded-full border border-brand-gold/25 bg-[#09241D] flex-shrink-0 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-[#04120E] group-hover:border-brand-gold transition-all duration-300 mt-0.5">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-lg md:text-xl font-normal text-white group-hover:text-brand-gold transition-colors duration-200 mb-3 leading-snug">
-                    {sector.name}
-                  </h3>
-
-                  <p className="text-[#96ACA8] text-xs md:text-sm leading-relaxed font-light">
+                  <p className="text-[#96ACA8] text-xs md:text-[13px] leading-relaxed font-light">
                     {sector.focus}
                   </p>
                 </div>
@@ -154,30 +153,46 @@ export const Sectors: React.FC = () => {
           })}
         </motion.div>
 
-        {/* Callout Box: Geography expertise: US <> GCC corridor */}
+        {/* Callout Box: Geography expertise: US–GCC corridor */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-10 sm:mt-12 md:mt-14 max-w-3xl mx-auto"
+          className="mt-6 sm:mt-8 md:mt-10 max-w-[1040px] mx-auto w-full"
         >
-          <div className="border border-brand-gold/40 bg-gradient-to-r from-[#051713] via-[#092820] to-[#051713] p-6 md:p-8 rounded-lg text-center relative shadow-xl shadow-black/40">
+          <div className="border border-brand-gold/40 bg-gradient-to-br from-[#061814] via-[#092820] to-[#04120E] px-4 sm:px-6 md:px-7 py-5 sm:py-6 rounded-lg text-center relative shadow-2xl shadow-black/60 overflow-hidden">
             {/* Corner geometric accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-brand-gold" />
-            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-brand-gold" />
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-brand-gold" />
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-brand-gold" />
+            <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-brand-gold" />
+            <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-brand-gold" />
+            <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-brand-gold" />
+            <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-brand-gold" />
 
-            <div className="text-xs uppercase tracking-[0.3em] text-[#86A39E] mb-2 font-medium">
-              Cross-Border Specialization
+            <div className="text-[11px] uppercase tracking-[0.3em] text-brand-gold mb-1.5 font-semibold font-sans">
+              Geography expertise:
             </div>
-            <p className="font-serif text-xl sm:text-2xl md:text-3xl text-brand-gold font-normal tracking-wide">
-              Geography expertise: US &lt;&gt; GCC corridor
+
+            <h3 className="font-serif text-xl sm:text-2xl md:text-[28px] text-white font-normal tracking-wide mb-1.5 leading-snug">
+              THE US–GCC CORRIDOR
+            </h3>
+
+            <p className="font-serif text-sm sm:text-base md:text-lg text-brand-gold font-normal mb-3.5 leading-snug">
+              Connecting global innovation with regional opportunity.
             </p>
-            <p className="text-xs md:text-sm text-[#96ACA8] mt-3 max-w-xl mx-auto leading-relaxed">
-              Facilitating bilateral capital formation, proprietary technology licensing, sovereign co-investment, and Middle East industrialization mandates.
-            </p>
+
+            <div className="w-16 h-[1px] bg-brand-gold/40 mx-auto mb-3.5" />
+
+            <div className="space-y-1 text-[#A4BABB] text-xs sm:text-[13px] md:text-[13px] lg:text-[13.5px] leading-snug font-sans font-light w-full">
+              <p>
+                Manara Nexus works across the US–GCC corridor, connecting international technologies, expertise and capital with commercial and industrial opportunities in the Gulf.
+              </p>
+              <p>
+                We also support GCC-based businesses and project sponsors seeking international technology partners, strategic relationships and pathways to capital.
+              </p>
+              <p>
+                Our focus is on building commercially grounded connections that can advance market access, industrial participation and project development.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

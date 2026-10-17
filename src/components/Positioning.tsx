@@ -1,18 +1,28 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 export const Positioning: React.FC = () => {
   return (
     <section
       id="about"
-      className="bg-[#F4F6F4] py-12 sm:py-16 md:py-20 px-6 md:px-12 relative overflow-hidden border-b border-[#E2E6E3]"
+      className="bg-[#F4F6F4] py-14 sm:py-18 md:py-24 px-6 md:px-12 relative overflow-hidden border-b border-[#E2E6E3]"
     >
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="flex flex-col items-center">
-          {/* Top Ornament: Lines with Darker Golden 8-Pointed Star */}
-          <div className="flex items-center justify-center gap-4 mb-4">
+          {/* Pill Badge: UNITED STATES ⟷ GCC ECOSYSTEMS (Placed above the line, no bullet point) */}
+          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-brand-gold/40 bg-[#061814] mb-5 sm:mb-6 shadow-xl shadow-black/10">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-brand-gold font-sans">
+              UNITED STATES
+            </span>
+            <span className="text-brand-gold/60 text-xs font-light">⟷</span>
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-brand-gold font-sans">
+              GCC ECOSYSTEMS
+            </span>
+          </div>
+
+          {/* Ornament: Lines with Darker Golden 8-Pointed Star */}
+          <div className="flex items-center justify-center gap-4 mb-7 sm:mb-8">
             <div className="w-16 sm:w-24 h-[1px] bg-[#9E7B38]/50" />
             <svg
               className="w-4 h-4 text-[#9E7B38]"
@@ -24,30 +34,14 @@ export const Positioning: React.FC = () => {
             <div className="w-16 sm:w-24 h-[1px] bg-[#9E7B38]/50" />
           </div>
 
-          {/* Section Subtitle Title: US | GCC */}
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.38em] font-semibold text-[#9E7B38] font-sans mb-5 sm:mb-6">
-            US | GCC
-          </span>
-
           {/* Core Editorial Quote: Scaled to fit comfortably in 3 lines */}
-          <blockquote className="font-serif text-lg sm:text-xl md:text-[23px] lg:text-[26px] leading-[1.48] text-[#0A1612] font-normal max-w-5xl tracking-tight mb-7 sm:mb-8">
+          <blockquote className="font-serif text-lg sm:text-xl md:text-[23px] lg:text-[26px] leading-[1.48] text-[#0A1612] font-normal max-w-5xl tracking-tight">
             “Manara Nexus operates at the intersection of technology, industry and capital,
             <br className="hidden md:inline" />{" "}
             helping high-potential technologies and projects progress from technical opportunity
             <br className="hidden md:inline" />{" "}
             to commercially viable, investment-ready and deployable value propositions.”
           </blockquote>
-
-          {/* Bottom Architectural Mandate Line Matching Reference */}
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[10px] sm:text-[11px] uppercase tracking-[0.24em] sm:tracking-[0.28em] font-semibold text-[#1B2F27]">
-            <span>ARCHITECTURAL MANDATE</span>
-            <span className="text-[#9E7B38] text-[8px] sm:text-[9px]">•</span>
-            <span>DISCRETION</span>
-            <span className="text-[#9E7B38] text-[8px] sm:text-[9px]">•</span>
-            <span>PRECISION</span>
-            <span className="text-[#9E7B38] text-[8px] sm:text-[9px]">•</span>
-            <span>LONG-TERM ALIGNMENT</span>
-          </div>
         </div>
       </div>
     </section>

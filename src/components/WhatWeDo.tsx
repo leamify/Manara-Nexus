@@ -18,7 +18,7 @@ const services: ServiceItem[] = [
     id: "01",
     title: "Strategic Advisory",
     description:
-      "Techno-commercial strategy, market assessment, competitive intelligence, and regulatory positioning for emerging breakthroughs across key transcontinental jurisdictions.",
+      "Techno-commercial strategy, market assessment, competitive positioning and opportunity evaluation to support informed decisions.",
     icon: Compass,
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
   },
@@ -26,25 +26,25 @@ const services: ServiceItem[] = [
     id: "02",
     title: "Commercialisation",
     description:
-      "Market access, customer engagement, pilot design, early customer acquisition, and institutional validation across primary markets and tier-one corporate conglomerates.",
+      "Market entry, customer and offtake engagement, strategic partnerships and go-to-market pathways that help translate technology into commercial opportunity.",
     icon: TrendingUp,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "03",
     title: "Strategic Capital",
     description:
-      "Investment readiness, capital strategy, institutional syndicate structuring, and sovereign wealth/private equity alignment to fund critical capital-intensive scaling.",
+      "Investment readiness, capital strategy, investor positioning and transaction support aligned with the commercial realities of the opportunity.",
     icon: Landmark,
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1444723121867-7a241cacace9?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "04",
-    title: "Project Deployment",
+    title: "Project Development & Deployment",
     description:
-      "Mega-project partnerships, EPC structuring, industrial localization, and cross-border government/stakeholder management anchoring operations inside major economic zones.",
+      "Strategic partnerships, stakeholder engagement, localisation pathways and commercial coordination for complex industrial and infrastructure opportunities.",
     icon: Briefcase,
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
@@ -72,14 +72,14 @@ export const WhatWeDo: React.FC = () => {
   };
 
   return (
-    <section id="what-we-do" className="bg-[#F6F7F9] py-12 sm:py-16 md:py-20 px-6 md:px-12 relative border-t border-neutral-200/60">
+    <section id="what-we-do" className="bg-[#F6F7F9] py-14 sm:py-18 md:py-24 px-6 md:px-12 relative border-t border-neutral-200/60">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="mb-8 sm:mb-10">
-          <div className="text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3">
+        {/* Section Header: balanced typography hierarchy */}
+        <div className="mb-10 sm:mb-12">
+          <div className="text-sm sm:text-[15px] uppercase tracking-[0.28em] font-semibold text-[#9E7B38] mb-3 font-sans">
             WHAT WE DO
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight font-normal">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#0A1612] tracking-tight font-normal leading-[1.24]">
             From opportunity to deployment.
           </h2>
         </div>
@@ -98,26 +98,26 @@ export const WhatWeDo: React.FC = () => {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-6 sm:p-7 md:p-8 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#06181B]/50 overflow-hidden"
+                className="group relative bg-[#091F22] bg-gradient-to-br from-[#0C272B] via-[#091F22] to-[#07171A] p-7 sm:p-8 md:p-9 rounded-none border border-[#163B40] hover:border-brand-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#06181B]/50 overflow-hidden"
               >
-                {/* Background image that is revealed slightly on hover */}
+                {/* Background image clearly revealed on hover */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover object-center opacity-0 group-hover:opacity-20 scale-100 group-hover:scale-105 transition-all duration-700 ease-out filter grayscale brightness-110 contrast-125 mix-blend-luminosity"
+                    className="object-cover object-center opacity-0 group-hover:opacity-40 scale-100 group-hover:scale-105 transition-all duration-700 ease-out filter brightness-115 contrast-125"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07171A] via-[#091F22]/75 to-[#0C272B]/60 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07171A]/95 via-[#091F22]/75 to-[#0C272B]/55 transition-opacity duration-500 group-hover:opacity-80" />
                 </div>
 
                 {/* Subtle top indicator bar */}
                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold rounded-none transition-all duration-500 ease-out group-hover:w-full z-20" />
 
                 <div className="relative z-10">
-                  <div className="flex items-start justify-between gap-4 mb-3 sm:mb-4">
-                    {/* Golden Colored Title at top in place of 01, 02 */}
-                    <h3 className="font-serif text-2xl sm:text-[26px] md:text-3xl text-brand-gold font-normal tracking-tight">
+                  <div className="flex items-start justify-between gap-4 mb-3.5 sm:mb-4">
+                    {/* Golden Colored Title */}
+                    <h3 className="font-serif text-xl sm:text-2xl md:text-[25px] text-brand-gold font-normal tracking-tight leading-snug">
                       {service.title}
                     </h3>
                     <div className="w-9 h-9 rounded-full border border-brand-gold/30 bg-[#0F3136] flex-shrink-0 flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
@@ -125,7 +125,7 @@ export const WhatWeDo: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-[#9DB3B5] text-sm sm:text-[14.5px] leading-relaxed font-sans font-light">
+                  <p className="text-[#A4BABB] text-sm sm:text-[14.5px] leading-relaxed font-sans font-light">
                     {service.description}
                   </p>
                 </div>

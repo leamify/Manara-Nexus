@@ -1,207 +1,125 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
-interface MandateTab {
+interface MandateCard {
   id: string;
-  label: string;
   title: string;
-  description: string;
   bullets: string[];
-  capitalScale: string;
-  corridor: string;
 }
 
-const mandateTabs: MandateTab[] = [
+const mandatesData: MandateCard[] = [
   {
     id: "commercialisation-strategy",
-    label: "Commercialisation Strategy",
     title: "Commercialisation Strategy",
-    description:
-      "Structured techno-commercial architecture and validation models to transition high-growth technologies into sovereign and corporate deployment pipelines.",
     bullets: [
       "Market opportunity assessment",
-      "Commercial positioning",
-      "Market-entry strategy",
+      "Commercial positioning, Go-to-market pathways",
+      "Regionally aligned Market-entry strategy",
       "Customer / offtaker engagement",
-      "Go-to-market pathways",
     ],
-    capitalScale: "$50M — $300M+",
-    corridor: "US <> GCC Sovereign Corridor",
   },
   {
     id: "market-access-partnerships",
-    label: "Market Access & Partnerships",
-    title: "Market Access & Partnerships",
-    description:
-      "Bilateral joint ventures, industrial localization frameworks, and high-level stakeholder orchestration across sovereign and corporate conglomerates.",
+    title: "Market Access & Strategic Partnerships",
     bullets: [
-      "GCC ecosystem development",
+      "Regional industry ecosystem mapping",
       "Strategic partner identification",
       "Customer and stakeholder engagement",
-      "JV / partnership development",
-      "Technology deployment opportunities",
+      "Industrial collaborations and joint-venture pathways",
     ],
-    capitalScale: "$75M — $500M+",
-    corridor: "US <> Saudi Arabia & UAE",
   },
   {
-    id: "investment-readiness-strategic-capital",
-    label: "Investment Readiness & Strategic Capital",
+    id: "investment-readiness-capital",
     title: "Investment Readiness & Strategic Capital",
-    description:
-      "Institutional syndicate formation, bankability analysis, and dual sovereign wealth fund alignment to fund critical capital-intensive scaling.",
     bullets: [
-      "Investment proposition",
-      "Capital strategy",
-      "Investor mapping",
-      "Strategic investor engagement",
-      "Capital formation",
+      "Commercial and investment positioning",
+      "Investor readiness and diligence preparation",
+      "Capital strategy and investor mapping",
+      "Strategic investor and industry-partner alignment",
     ],
-    capitalScale: "$100M — $1B+",
-    corridor: "US Institutional <> GCC Sovereign LPs",
   },
   {
     id: "mega-projects-deployment",
-    label: "Mega Projects & Deployment",
-    title: "Mega Projects & Deployment",
-    description:
-      "Integrating novel industrial decarbonisation, materials, and deep-tech architectures directly into signature sovereign giga-projects and master developments.",
+    title: "Mega Projects & Industrial Deployment",
     bullets: [
-      "Project commercialisation",
-      "Capital strategy",
-      "Strategic partnerships",
-      "Stakeholder management",
-      "Deployment ecosystem development",
+      "Commercial de-risking of industrial opportunities",
+      "Project partnership and localisation strategies",
+      "Stakeholder and ecosystem alignment",
+      "Commercial pathways towards deployment",
     ],
-    capitalScale: "$250M — $5B+",
-    corridor: "Cross-Border Economic Corridors",
   },
 ];
 
 export const Mandates: React.FC = () => {
-  const [activeTabId, setActiveTabId] = useState<string>("commercialisation-strategy");
-
-  const currentTab =
-    mandateTabs.find((t) => t.id === activeTabId) || mandateTabs[0];
-
   return (
     <section
       id="mandates"
-      className="bg-[#030A08] text-white py-12 sm:py-16 md:py-20 px-6 md:px-12 relative border-t border-[#12362C]/60"
+      className="bg-[#F6F8F7] text-[#0A1612] py-14 sm:py-18 md:py-24 px-6 md:px-12 relative border-t border-neutral-200/80"
     >
-      {/* Background Subtle Green Radial Glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(18, 72, 56, 0.16) 0%, transparent 70%)",
-        }}
-      />
-
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10 pb-6 border-b border-[#143B30]/60 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-              <span>MANDATES</span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal tracking-tight">
-              Sovereign &amp; Industrial<br />Mandate Matrix
-            </h2>
+        {/* Header - Left-aligned stacked layout */}
+        <div className="max-w-6xl mb-10 sm:mb-12">
+          <div className="text-sm sm:text-[15px] uppercase tracking-[0.28em] font-semibold text-[#9E7B38] mb-2.5 font-sans">
+            MANDATES
           </div>
-          <p className="text-[#96ACA8] text-sm sm:text-[14.5px] max-w-md font-sans font-light leading-relaxed">
-            We work alongside technology companies, project sponsors, investors and strategic partners on mandates where commercial, strategic and capital considerations are closely interconnected.
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#0A1612] tracking-tight font-normal leading-[1.24] mb-3.5 sm:mb-4">
+            Where commercial, strategic and capital considerations align.
+          </h2>
+          <p className="text-[#4F635D] text-sm sm:text-base md:text-[16.5px] leading-relaxed font-sans font-light max-w-5xl lg:max-w-6xl">
+            We alongside frontier technology innovators, project sponsors, investors and strategic partners on mandates that require an integrated view of market opportunity, commercial execution and capital.
           </p>
         </div>
 
-        {/* 4 Square Tabs for 4 Types of Mandates (rounded-none, no corner border curve) */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          {mandateTabs.map((tab) => {
-            const isActive = tab.id === activeTabId;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTabId(tab.id)}
-                className={`px-5 py-3 rounded-none text-xs font-semibold uppercase tracking-wider transition-all duration-300 border ${
-                  isActive
-                    ? "bg-brand-gold text-[#04120E] border-brand-gold shadow-lg shadow-brand-gold/15"
-                    : "bg-[#061A15] text-[#86A39E] hover:text-white hover:bg-[#0A261F] border-[#143B30]"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Active Mandate Content with exact Bullet Points */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentTab.id}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] hover:border-brand-gold/60 p-8 sm:p-10 md:p-12 rounded-none transition-all duration-300 shadow-2xl shadow-[#020A07]/60"
-          >
-            {/* Two-Column Editorial Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-              {/* Left Column: Title, Overview, Metrics */}
-              <div className="lg:col-span-6 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mb-4 tracking-tight leading-[1.3]">
-                    {currentTab.title}
-                  </h3>
-                  <p className="text-[#96ACA8] text-sm sm:text-base leading-relaxed font-light mb-8">
-                    {currentTab.description}
-                  </p>
-                </div>
-
-                {/* Corridor & Scale Metrics */}
-                <div className="pt-6 border-t border-[#143B30]/70 grid grid-cols-2 gap-5">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
-                      TARGET CAPITAL SCALE
-                    </div>
-                    <div className="font-serif text-lg sm:text-xl font-normal text-brand-gold">
-                      {currentTab.capitalScale}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#6C8580] mb-1.5">
-                      CORRIDOR
-                    </div>
-                    <div className="text-xs sm:text-[13px] text-white/90 font-medium">
-                      {currentTab.corridor}
-                    </div>
-                  </div>
-                </div>
+        {/* 4 Mandate Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
+          {mandatesData.map((mandate, idx) => (
+            <motion.div
+              key={mandate.id}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.12 }}
+              className="bg-white border border-neutral-200/90 hover:border-brand-gold/80 rounded-none transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-neutral-300/40 relative overflow-hidden group flex flex-col"
+            >
+              {/* Card Title Banner - Deep Luxury Emerald with Champagne Gold typography */}
+              <div className="bg-[#061814] bg-gradient-to-r from-[#051713] via-[#092620] to-[#051713] text-[#DFBA73] font-sans font-semibold text-xs sm:text-[12.5px] uppercase tracking-wider py-3.5 px-4 text-center flex items-center justify-center min-h-[64px] leading-snug border-b-2 border-brand-gold/50 shadow-inner">
+                {mandate.title}
               </div>
 
-              {/* Right Column: Exact 5 Bullet Points */}
-              <div className="lg:col-span-6 bg-[#04120E]/80 border border-[#143B30]/80 p-6 sm:p-8 rounded-none flex flex-col justify-center">
-                <div className="text-xs uppercase tracking-[0.25em] font-semibold text-brand-gold mb-6 pb-3 border-b border-[#143B30]/70">
-                  Core Execution Scope &amp; Deliverables
-                </div>
-                <ul className="space-y-4">
-                  {currentTab.bullets.map((bullet, idx) => (
+              {/* Card Body */}
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                <ul className="space-y-3">
+                  {mandate.bullets.map((bullet, bulletIdx) => (
                     <li
-                      key={idx}
-                      className="flex items-start gap-3.5 text-sm sm:text-[14.5px] text-white/90 font-light"
+                      key={bulletIdx}
+                      className="flex items-start gap-2.5 text-xs sm:text-[13.5px] text-[#2C4039] font-sans font-light leading-relaxed"
                     >
-                      <span className="text-brand-gold mt-0.5 text-base leading-none select-none">●</span>
-                      <span className="leading-snug text-[#D8E6E3]">{bullet}</span>
+                      <span className="text-brand-gold mt-1 text-[10px] select-none shrink-0">●</span>
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Framing Sentence Below Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 sm:mt-12 text-center"
+        >
+          <div className="inline-block bg-white/90 border border-neutral-200/90 px-6 sm:px-8 py-3.5 sm:py-4 shadow-sm">
+            <p className="font-serif text-sm sm:text-base text-[#2C4039] font-normal italic tracking-wide">
+              “Engagements are shaped around the needs, stage and context of each mandate.”
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
