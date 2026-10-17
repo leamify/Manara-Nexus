@@ -73,14 +73,14 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation Links Matching Image 2 */}
-        <nav className="hidden lg:flex items-center space-x-8 xl:space-x-9" aria-label="Main Navigation">
+        <nav className="hidden lg:flex items-center space-x-8 xl:space-x-9 font-sans" aria-label="Main Navigation">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.replace("#", "");
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`text-[11.5px] font-medium tracking-[0.22em] uppercase transition-colors duration-200 relative py-2 ${
+                className={`font-sans text-[11.5px] font-medium tracking-[0.22em] uppercase transition-colors duration-200 relative py-2 ${
                   isActive
                     ? "text-brand-gold font-semibold"
                     : "text-[#D2DEE2] hover:text-brand-gold"
@@ -110,13 +110,13 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#051410]/98 backdrop-blur-xl border-b border-brand-gold/20 px-6 py-6 shadow-2xl transition-all">
-          <nav className="flex flex-col space-y-4">
+          <nav className="flex flex-col space-y-4 font-sans">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-xs uppercase tracking-widest font-semibold text-[#D2DEE2] hover:text-brand-gold py-1.5 border-b border-white/5 transition-colors"
+                className="font-sans text-xs uppercase tracking-widest font-semibold text-[#D2DEE2] hover:text-brand-gold py-1.5 border-b border-white/5 transition-colors"
               >
                 {item.label}
               </Link>

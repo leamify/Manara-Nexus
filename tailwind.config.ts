@@ -26,10 +26,17 @@ const config: Config = {
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
-        cormorant: ["var(--font-cormorant)", "Cormorant Garamond", "Georgia", "serif"],
-        cinzel: ["var(--font-cinzel)", "Cinzel", "serif"],
-        sans: ["var(--font-inter)", "Inter", "system-ui", "-apple-system", "sans-serif"],
-        jakarta: ["var(--font-jakarta)", "Plus Jakarta Sans", "Inter", "sans-serif"],
+        sans: [
+          "var(--font-inter)",
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "'Segoe UI'",
+          "Roboto",
+          "'Helvetica Neue'",
+          "Arial",
+          "sans-serif",
+        ],
       },
       backgroundImage: {
         "radial-gradient": "radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.12) 0%, transparent 60%)",
