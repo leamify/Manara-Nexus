@@ -25,10 +25,9 @@ const config: Config = {
         "brand-gray-muted": "#8A9A9A",
       },
       fontFamily: {
-        serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
+        serif: ["'Playfair Display'", "Georgia", "serif"],
         sans: [
-          "var(--font-inter)",
-          "Inter",
+          "'Inter'",
           "-apple-system",
           "BlinkMacSystemFont",
           "'Segoe UI'",
