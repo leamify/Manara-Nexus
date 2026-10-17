@@ -12,9 +12,9 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "HOME", href: "#home" },
-  { label: "ABOUT", href: "#about" },
   { label: "WHAT WE DO", href: "#what-we-do" },
   { label: "SECTORS", href: "#sectors" },
+  { label: "ABOUT", href: "#team" },
   { label: "MANDATES", href: "#mandates" },
   { label: "CONTACT", href: "#contact" },
 ];
@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ["home", "about", "what-we-do", "sectors", "mandates", "contact"];
+      const sections = ["home", "what-we-do", "sectors", "team", "mandates", "contact"];
       const scrollPosition = window.scrollY + 180;
 
       for (const section of sections) {

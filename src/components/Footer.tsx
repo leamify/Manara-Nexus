@@ -7,9 +7,9 @@ import { Mail, MapPin, Globe, Shield, ArrowUpRight, CheckCircle2 } from "lucide-
 
 const quickLinks = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
   { label: "What We Do", href: "#what-we-do" },
   { label: "Sectors", href: "#sectors" },
+  { label: "About", href: "#team" },
   { label: "Mandates", href: "#mandates" },
   { label: "Contact", href: "#contact" },
 ];

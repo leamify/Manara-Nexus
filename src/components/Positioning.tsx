@@ -5,7 +5,7 @@ import React from "react";
 export const Positioning: React.FC = () => {
   return (
     <section
-      id="about"
+      id="positioning"
       className="bg-[#F4F6F4] py-14 sm:py-18 md:py-24 px-6 md:px-12 relative overflow-hidden border-b border-[#E2E6E3]"
     >
       <div className="max-w-5xl mx-auto text-center relative z-10">

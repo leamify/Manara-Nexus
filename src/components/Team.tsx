@@ -33,6 +33,9 @@ export const Team: React.FC = () => {
       id="team"
       className="bg-[#030A08] text-white py-14 sm:py-18 md:py-24 px-6 md:px-12 relative overflow-hidden border-t border-[#12362C]/60"
     >
+      {/* Anchor alias for About link */}
+      <div id="about" className="absolute -top-16 opacity-0 pointer-events-none" />
+
       {/* Background Subtle Green Radial Glow */}
       <div
         className="absolute inset-0 pointer-events-none"
