@@ -116,7 +116,7 @@ export const Mandates: React.FC = () => {
         >
           <div className="inline-block bg-white/90 border border-neutral-200/90 px-6 sm:px-8 py-3.5 sm:py-4 shadow-sm">
             <p className="font-serif text-sm sm:text-base text-[#2C4039] font-normal italic tracking-wide">
-              “Engagements are shaped around the needs, stage and context of each mandate.”
+              Engagements are shaped around the needs, stage and context of each mandate.
             </p>
           </div>
         </motion.div>

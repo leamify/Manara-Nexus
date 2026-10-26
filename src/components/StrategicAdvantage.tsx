@@ -70,10 +70,10 @@ export const StrategicAdvantage: React.FC = () => {
                     {card.title}
                   </h3>
 
-                  {/* Highlight Thesis Quote */}
+                  {/* Highlight Thesis */}
                   <div className="p-3 sm:p-3.5 rounded-sm bg-[#F8FAF9] border-l-2 border-brand-gold mb-4">
                     <p className="font-serif italic text-xs sm:text-[13.5px] text-[#1A2E28] leading-snug font-normal">
-                      “{card.highlight}”
+                      {card.highlight}
                     </p>
                   </div>
 

@@ -112,10 +112,13 @@ export const HeroSection: React.FC = () => {
       {/* 2. Main Hero Content: Left-Aligned Editorial Layout */}
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-32 sm:pt-36 pb-28 sm:pb-32">
         <div className="max-w-4xl flex flex-col items-start text-left gap-y-10 sm:gap-y-12 md:gap-y-14 lg:gap-y-16">
-          {/* Pill Badge: MANARA NEXUS */}
-          <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full border border-brand-gold/40 bg-[#061814]/85 backdrop-blur-md shadow-xl shadow-black/40">
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-brand-gold font-sans">
-              MANARA NEXUS
+          {/* Pill Badge: Strategic Advisory / US - GCC */}
+          <div className="inline-flex flex-col items-start px-4 sm:px-5 py-2 rounded-xl border border-brand-gold/40 bg-[#061814]/85 backdrop-blur-md shadow-xl shadow-black/40">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.26em] font-semibold text-brand-gold font-sans leading-snug">
+              Strategic Advisory
+            </span>
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] font-medium text-brand-gold/80 font-sans mt-0.5">
+              US – GCC
             </span>
           </div>
 

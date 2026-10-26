@@ -71,45 +71,45 @@ export const Team: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] rounded-none overflow-hidden hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#02100B]/50 flex flex-col sm:flex-row group flex-1"
+                className="bg-[#061814]/90 bg-gradient-to-br from-[#09241E] via-[#061A15] to-[#04120E] border border-[#143B30] rounded-none overflow-hidden hover:border-brand-gold/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#02100B]/50 p-6 sm:p-7 flex flex-col justify-between group flex-1"
               >
-                {/* Executive Portrait on Left */}
-                <div className="relative w-full sm:w-[175px] md:w-[195px] h-[260px] sm:h-auto shrink-0 bg-[#020A07] border-b sm:border-b-0 sm:border-r border-[#143B30]/60">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    fill
-                    priority
-                    className="object-cover object-top filter brightness-[0.98] contrast-[1.03] transition-all duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-[#061814]/15 to-[#061814]/65 pointer-events-none" />
-                </div>
-
-                {/* Bio & Credentials on Right */}
-                <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10.5px] sm:text-[11px] uppercase tracking-[0.22em] text-brand-gold font-semibold font-mono">
-                        {partner.role}
-                      </span>
-                      <div className="flex items-center gap-2 text-[#7E9A94]">
-                        <span className="p-1 rounded-none hover:text-brand-gold transition-colors cursor-pointer" aria-label="LinkedIn">
-                          <Linkedin className="w-3.5 h-3.5" />
-                        </span>
-                        <span className="p-1 rounded-none hover:text-brand-gold transition-colors cursor-pointer" aria-label="Email">
-                          <Mail className="w-3.5 h-3.5" />
-                        </span>
-                      </div>
+                <div>
+                  <div className="flex items-start gap-4 sm:gap-5 mb-4">
+                    {/* Small Executive Thumbnail */}
+                    <div className="relative w-20 h-20 sm:w-22 sm:h-22 md:w-24 md:h-24 shrink-0 rounded-none overflow-hidden border border-brand-gold/40 bg-[#020A07] shadow-lg shadow-black/50">
+                      <Image
+                        src={partner.image}
+                        alt={partner.name}
+                        fill
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
 
-                    <h3 className="font-serif text-xl sm:text-[23px] text-white font-normal tracking-tight mb-2.5 group-hover:text-brand-gold transition-colors">
-                      {partner.name}
-                    </h3>
+                    {/* Role, Name & Socials */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-brand-gold font-semibold font-mono">
+                          {partner.role}
+                        </span>
+                        <div className="flex items-center gap-2 text-[#7E9A94]">
+                          <span className="p-1 hover:text-brand-gold transition-colors cursor-pointer" aria-label="LinkedIn">
+                            <Linkedin className="w-3.5 h-3.5" />
+                          </span>
+                          <span className="p-1 hover:text-brand-gold transition-colors cursor-pointer" aria-label="Email">
+                            <Mail className="w-3.5 h-3.5" />
+                          </span>
+                        </div>
+                      </div>
 
-                    <p className="text-[#A0B8B2] text-xs sm:text-[13px] md:text-[13.5px] leading-relaxed font-sans font-light">
-                      {partner.bio}
-                    </p>
+                      <h3 className="font-serif text-xl sm:text-[22px] text-white font-normal tracking-tight mb-1 group-hover:text-brand-gold transition-colors">
+                        {partner.name}
+                      </h3>
+                    </div>
                   </div>
+
+                  <p className="text-[#A0B8B2] text-xs sm:text-[13px] md:text-[13.5px] leading-relaxed font-sans font-light">
+                    {partner.bio}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -138,7 +138,7 @@ export const Team: React.FC = () => {
                 </p>
 
                 <p className="text-[#A0B8B2] text-xs sm:text-[13.5px] md:text-[14px] leading-relaxed font-sans font-light">
-                  Beyond our two Managing Partners, Manara Nexus works with a network of six function &amp; industry specific subject-matter experts who are embedded according to the needs of each mandate. This flexible model brings the right technical, commercial and sector-specific expertise into each assignment - combining senior-level strategic direction with the specialist knowledge required to advance the opportunity.
+                  Beyond our two Managing Partners, Manara Nexus has a panel of six function &amp; industry specific subject-matter experts who are embedded according to the needs of each mandate. This flexible model brings the right technical, commercial and sector-specific expertise into each assignment - combining senior-level strategic direction with the specialist knowledge required to advance the opportunity.
                 </p>
               </div>
 

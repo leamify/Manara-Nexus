@@ -168,16 +168,16 @@ export const Sectors: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-brand-gold" />
             <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-brand-gold" />
 
-            <div className="text-[11px] uppercase tracking-[0.3em] text-brand-gold mb-1.5 font-semibold font-sans">
+            <div className="text-xs sm:text-[13px] md:text-sm uppercase tracking-[0.22em] text-brand-gold mb-1.5 font-semibold font-sans">
               Geography expertise:
             </div>
 
-            <h3 className="font-serif text-xl sm:text-2xl md:text-[28px] text-white font-normal tracking-wide mb-1.5 leading-snug">
-              THE US–GCC CORRIDOR
+            <h3 className="font-serif text-xl sm:text-2xl md:text-[26px] text-white font-normal tracking-wide mb-1.5 leading-snug">
+              The US–GCC Corridor
             </h3>
 
-            <p className="font-serif text-sm sm:text-base md:text-lg text-brand-gold font-normal mb-3.5 leading-snug">
-              Connecting global innovation with regional opportunity.
+            <p className="font-sans text-xs sm:text-[13px] md:text-sm text-brand-gold font-normal sm:font-medium mb-3.5 leading-snug tracking-wide">
+              Connecting global innovation with regional opportunity
             </p>
 
             <div className="w-16 h-[1px] bg-brand-gold/40 mx-auto mb-3.5" />

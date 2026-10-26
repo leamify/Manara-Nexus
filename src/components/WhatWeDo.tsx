@@ -80,7 +80,7 @@ export const WhatWeDo: React.FC = () => {
             WHAT WE DO
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#0A1612] tracking-tight font-normal leading-[1.24]">
-            From opportunity to deployment.
+            From opportunity to deployment
           </h2>
         </div>
 
