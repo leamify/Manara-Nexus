@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
   { label: "HOME", href: "#home" },
   { label: "WHAT WE DO", href: "#what-we-do" },
   { label: "SECTORS", href: "#sectors" },
-  { label: "ABOUT", href: "#team" },
+  { label: "ABOUT", href: "#about" },
   { label: "MANDATES", href: "#mandates" },
   { label: "CONTACT", href: "#contact" },
 ];
@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ["home", "what-we-do", "sectors", "team", "mandates", "contact"];
+      const sections = ["home", "what-we-do", "sectors", "about", "team", "mandates", "contact"];
       const scrollPosition = window.scrollY + 180;
 
       for (const section of sections) {
@@ -75,7 +75,9 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation Links Matching Image 2 */}
         <nav className="hidden lg:flex items-center space-x-8 xl:space-x-9 font-sans" aria-label="Main Navigation">
           {navItems.map((item) => {
-            const isActive = activeSection === item.href.replace("#", "");
+            const isActive =
+              activeSection === item.href.replace("#", "") ||
+              (item.href === "#about" && activeSection === "team");
             return (
               <Link
                 key={item.label}

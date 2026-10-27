@@ -10,20 +10,26 @@ interface Partner {
   role: string;
   image: string;
   bio: string;
+  email: string;
+  linkedin: string;
 }
 
 const partners: Partner[] = [
   {
     name: "Joel Coville",
     role: "Managing Partner",
-    image: "https://res.cloudinary.com/g9q4th37/image/upload/v1791140718/6b9d20eb-a0d1-41b0-af40-b36ae79402a5.png",
+    image: "/images/joel-crop.jpg",
     bio: "Three decades across investment banking, asset management and private capital markets, with experience in transaction advisory, M&A and capital strategy for large-scale projects. Deep Middle East expertise and networks across UAE and KSA, supporting Economic Vision-led mandates and strategic capital deployment.",
+    email: "joel@manaranexus.com",
+    linkedin: "https://www.linkedin.com/in/joelcoville/",
   },
   {
     name: "Madhurima Roy",
     role: "Managing Partner",
-    image: "https://res.cloudinary.com/g9q4th37/image/upload/v1791140717/1b89ef48-a45c-406b-8476-879f1c6f3247.png",
+    image: "/images/madhurima-crop.jpg",
     bio: "Techno-commercial strategy experience across deep tech, climate tech, advanced materials, sustainable built environment, next-generation fuels and energy. GCC expertise in venture building, zero to one GTM, commercial de-risking, investor readiness and sustainable finance pathways, including commercial and capital partnerships for large-scale projects.",
+    email: "madhurima@manaranexus.com",
+    linkedin: "https://www.linkedin.com/in/madhurimaroy17/",
   },
 ];
 
@@ -33,8 +39,6 @@ export const Team: React.FC = () => {
       id="team"
       className="bg-[#030A08] text-white py-14 sm:py-18 md:py-24 px-6 md:px-12 relative overflow-hidden border-t border-[#12362C]/60"
     >
-      {/* Anchor alias for About link */}
-      <div id="about" className="absolute -top-16 opacity-0 pointer-events-none" />
 
       {/* Background Subtle Green Radial Glow */}
       <div
@@ -81,7 +85,7 @@ export const Team: React.FC = () => {
                         src={partner.image}
                         alt={partner.name}
                         fill
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
 
@@ -92,12 +96,22 @@ export const Team: React.FC = () => {
                           {partner.role}
                         </span>
                         <div className="flex items-center gap-2 text-[#7E9A94]">
-                          <span className="p-1 hover:text-brand-gold transition-colors cursor-pointer" aria-label="LinkedIn">
+                          <a
+                            href={partner.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1 hover:text-brand-gold transition-colors"
+                            aria-label={`${partner.name} LinkedIn`}
+                          >
                             <Linkedin className="w-3.5 h-3.5" />
-                          </span>
-                          <span className="p-1 hover:text-brand-gold transition-colors cursor-pointer" aria-label="Email">
+                          </a>
+                          <a
+                            href={`mailto:${partner.email}`}
+                            className="p-1 hover:text-brand-gold transition-colors"
+                            aria-label={`${partner.name} Email`}
+                          >
                             <Mail className="w-3.5 h-3.5" />
-                          </span>
+                          </a>
                         </div>
                       </div>
 

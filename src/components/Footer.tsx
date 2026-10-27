@@ -9,7 +9,7 @@ const quickLinks = [
   { label: "Home", href: "#home" },
   { label: "What We Do", href: "#what-we-do" },
   { label: "Sectors", href: "#sectors" },
-  { label: "About", href: "#team" },
+  { label: "About", href: "#about" },
   { label: "Mandates", href: "#mandates" },
   { label: "Contact", href: "#contact" },
 ];
@@ -70,17 +70,17 @@ export const Footer: React.FC = () => {
   return (
     <footer id="contact" className="bg-[#030D0A] text-[#86A39E] relative border-t border-[#164335]">
       {/* 1. Contact Us Section */}
-      <div className="py-16 sm:py-20 md:py-24 px-6 md:px-12 text-center relative bg-[#092F26]">
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-xs sm:text-[13px] uppercase tracking-[0.3em] font-semibold text-brand-gold mb-3 sm:mb-4 font-sans">
+      <div className="py-7 sm:py-9 md:py-10 px-4 sm:px-6 md:px-8 text-center relative bg-[#092F26]">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-xs sm:text-[12.5px] uppercase tracking-[0.3em] font-semibold text-brand-gold mb-2 sm:mb-2.5 font-sans">
             CONTACT US
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] text-white font-normal tracking-tight mb-6 sm:mb-8 leading-[1.3] max-w-4xl mx-auto">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-[26px] lg:text-[28px] text-white font-normal tracking-tight mb-3.5 sm:mb-4 leading-snug max-w-4xl mx-auto">
             Have an opportunity that needs the right combination of technology, industry and capital?
           </h2>
 
-          <div className="space-y-4 sm:space-y-5 text-[#C2D8D2] text-sm sm:text-base leading-relaxed font-sans font-light max-w-3xl mx-auto mb-8 sm:mb-10 text-center sm:text-left bg-[#061F19]/60 p-6 sm:p-8 border border-[#143B30] rounded-none shadow-xl shadow-black/20">
+          <div className="space-y-3 sm:space-y-3.5 text-[#C2D8D2] text-xs sm:text-[13.5px] md:text-sm leading-relaxed font-sans font-light w-full max-w-5xl lg:max-w-6xl xl:max-w-[1240px] mx-auto mb-5 sm:mb-6 text-center sm:text-left bg-[#061F19]/60 p-5 sm:p-6 md:p-7 border border-[#143B30] rounded-none shadow-xl shadow-black/20">
             <p>
               Perhaps you’re bringing an international technology to the GCC, looking to identify the right industrial partners, assessing opportunities within the region’s evolving ecosystems, or working to advance a project that needs a clearer commercial pathway and aligned strategic capital.
             </p>
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="w-full sm:w-auto px-9 py-4 bg-brand-gold text-[#04120E] font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/25"
+              className="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-[#04120E] font-semibold text-xs uppercase tracking-[0.22em] rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl shadow-brand-gold/25"
             >
               REQUEST AN INTRO CALL
             </button>
@@ -262,18 +262,19 @@ export const Footer: React.FC = () => {
       <div className="border-t border-[#133A2E] bg-[#030E0B] pt-16 pb-12 px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Column 1: Official Logo & Entity */}
-          <div className="space-y-4">
-            <div className="relative h-24 sm:h-28 md:h-32 w-32 sm:w-36 md:w-40 overflow-hidden rounded-none">
-              <Image
-                src="https://res.cloudinary.com/g9q4th37/image/upload/v1791141388/Manara_Nexus_logo_draft.jpg"
-                alt="Manara Nexus Logo"
-                fill
-                className="object-contain object-left"
-              />
-            </div>
-            <div className="text-[11px] text-brand-gray-muted/70 font-mono space-y-0.5 pt-2">
-              <p>ADGM Reg: #MN-ADV-8942-GCC</p>
-              <p>Delaware Entity: 7824190-DE</p>
+          <div className="flex flex-col items-start">
+            <div className="w-36 sm:w-40 md:w-44 flex flex-col items-center text-center">
+              <div className="relative h-24 sm:h-28 md:h-32 w-full overflow-hidden rounded-none">
+                <Image
+                  src="https://res.cloudinary.com/g9q4th37/image/upload/v1791141388/Manara_Nexus_logo_draft.jpg"
+                  alt="Manara Nexus Logo"
+                  fill
+                  className="object-contain object-center"
+                />
+              </div>
+              <p className="text-xs text-brand-gray-muted/90 font-sans font-medium pt-2 text-center w-full">
+                Manara Nexus Fz-LLC
+              </p>
             </div>
           </div>
 
@@ -324,32 +325,21 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 4: Compliance & Legal */}
+          {/* Column 4: Disclaimer */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-white mb-5">
-              Governance &amp; Legal
+              Disclaimer
             </h4>
-            <p className="text-[11px] leading-relaxed text-brand-gray-muted/70 font-light mb-3">
-              Manara Nexus provides corporate strategic advisory and techno-commercial management consultancy. We do not provide public brokerage services or regulated deposit-taking facilities.
+            <p className="text-[11px] leading-relaxed text-brand-gray-muted/70 font-light">
+              Manara Nexus provides strategic and commercial advisory services. This website is for general informational purposes only and does not constitute investment, legal or tax advice, or an offer or solicitation to buy or sell securities. No financing, investment or commercial outcome is guaranteed. Any services are subject to a separate written engagement agreement. Please do not submit confidential or proprietary information through this website.
             </p>
-            <div className="flex flex-col space-y-1 text-[11px] text-brand-gray-muted">
-              <a href="#compliance" className="hover:text-brand-gold transition-colors">
-                Terms of Engagement
-              </a>
-              <a href="#compliance" className="hover:text-brand-gold transition-colors">
-                Confidentiality Protocols
-              </a>
-              <a href="#compliance" className="hover:text-brand-gold transition-colors">
-                Regulatory Disclaimers
-              </a>
-            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-gray-muted/60">
-          <p>© {new Date().getFullYear()} Manara Nexus Strategic Advisory LLC. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0 font-mono text-[10px]">NEW YORK &middot; ABU DHABI &middot; RIYADH</p>
+          <p>© {new Date().getFullYear()} Manara Nexus Fz-LLC. All rights reserved.</p>
+          <p className="mt-2 sm:mt-0 font-mono text-[10px] tracking-wider uppercase">UAE &middot; UNITED STATES &middot; INDIA</p>
         </div>
       </div>
     </footer>

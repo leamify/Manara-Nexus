@@ -35,9 +35,13 @@ const advantageCards: AdvantageCard[] = [
 export const StrategicAdvantage: React.FC = () => {
   return (
     <section
-      id="strategic-advantage"
-      className="bg-[#F7F9F8] py-14 sm:py-18 md:py-24 px-6 md:px-12 relative border-t border-neutral-200/70"
+      id="about"
+      className="bg-[#F7F9F8] py-14 sm:py-18 md:py-24 px-6 md:px-12 relative border-t border-neutral-200/70 scroll-mt-16 md:scroll-mt-20"
     >
+      {/* Anchor aliases */}
+      <div id="why-manara" className="absolute -top-20 opacity-0 pointer-events-none" />
+      <div id="strategic-advantage" className="absolute -top-20 opacity-0 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="max-w-7xl mb-10 sm:mb-12">
